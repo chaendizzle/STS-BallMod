@@ -90,7 +90,7 @@
             "Gain [E] at the start of your turn. You may only spend #b1 minute on any given turn."
         ]
     },
-    "balls:Fudgeball": {
+    "balls:FudgeBall": {
         "NAME": "Fudge Ball",
         "FLAVOR": "TODO",
         "DESCRIPTIONS": [
@@ -167,8 +167,8 @@
             "At the end of every other combat, add #b25 gold, a potion, or a card reward to the rewards."
         ]
     },
-    "balls:Riceball": {
-        "NAME": "Riceball",
+    "balls:RiceBall": {
+        "NAME": "Rice Ball",
         "FLAVOR": "TODO",
         "DESCRIPTIONS": [
             "Increase max HP by #b12."
@@ -195,7 +195,7 @@
             "For every #b3 attacks played, channel #1 frost orb."
         ]
     },
-    "balls:TeninsBall": {
+    "balls:TennisBall": {
         "NAME": "Tennis Ball",
         "FLAVOR": "TODO",
         "DESCRIPTIONS": [

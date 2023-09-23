@@ -1,6 +1,5 @@
 package balls;
 
-import basemod.AutoAdd;
 import basemod.BaseMod;
 import basemod.ModLabeledToggleButton;
 import basemod.ModPanel;
@@ -29,10 +28,8 @@ import com.megacrit.cardcrawl.localization.UIStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.relics.AbstractRelic;
 import com.megacrit.cardcrawl.rooms.AbstractRoom;
-import com.megacrit.cardcrawl.unlock.UnlockTracker;
-
 import balls.helpers.ComplimentHelper;
-import balls.relics.AbstractBallRelic;
+import balls.relics.*;
 import balls.ui.informationpanel.CombatInformationPanel;
 import balls.ui.informationpanel.EventInformationPanel;
 import balls.util.IDCheckDontTouchPls;
@@ -246,17 +243,61 @@ public class BallsInitializer implements
     public void receiveEditRelics() {
         logger.info("Adding relics");
 
-        new AutoAdd(modID)
-            .packageFilter(AbstractBallRelic.class)
-            .any(AbstractBallRelic.class, (info, relic) -> {
-                if (relic.cardColor == null) {
-                    BaseMod.addRelic((AbstractRelic)relic, RelicType.SHARED);
-                } else {
-                    BaseMod.addRelicToCustomPool((AbstractRelic)relic, relic.cardColor);
-                }
-                if (info.seen)
-                    UnlockTracker.markRelicAsSeen(relic.relicId);
-            });
+        // TOOD: like usual, auto add doesn't work for some reason so I have to add the relics manually
+        // new AutoAdd(modID)
+        //     .packageFilter(AbstractBallRelic.class)
+        //     .any(CustomRelic.class, (info, relic) -> {
+        //         logger.info("HERE");
+        //         logger.info(relic.relicId);
+        //         if (relic instanceof AbstractBallRelic) {
+        //             if (((AbstractBallRelic)relic).cardColor == null) {
+        //                 BaseMod.addRelic((AbstractRelic)relic, RelicType.SHARED);
+        //             } else {
+        //                 BaseMod.addRelicToCustomPool((AbstractRelic)relic, ((AbstractBallRelic)relic).cardColor);
+        //             }
+        //         }
+        //         if (info.seen)
+        //             UnlockTracker.markRelicAsSeen(relic.relicId);
+        //     });
+
+        BaseMod.addRelic(new Baal(), RelicType.SHARED);
+        BaseMod.addRelic(new BallOfYarn(), RelicType.SHARED);
+        BaseMod.addRelic(new Baseball(), RelicType.SHARED);
+        BaseMod.addRelic(new Basketball(), RelicType.SHARED);
+        BaseMod.addRelic(new BeachBall(), RelicType.SHARED);
+        BaseMod.addRelic(new BowlingBall(), RelicType.SHARED);
+        BaseMod.addRelic(new CheeseBall(), RelicType.SHARED);
+        BaseMod.addRelic(new CrystalBall(), RelicType.SHARED);
+        // BaseMod.addRelic(new DiscoBall(), RelicType.SHARED);
+        BaseMod.addRelic(new Dodgeball(), RelicType.SHARED);
+        // BaseMod.addRelic(new DragonBall(), RelicType.SHARED);
+        BaseMod.addRelic(new EightBall(), RelicType.SHARED);
+        BaseMod.addRelic(new EnergyBall(), RelicType.SHARED);
+        // BaseMod.addRelic(new Eyeball(), RelicType.SHARED);
+        BaseMod.addRelic(new Football(), RelicType.SHARED);
+        // BaseMod.addRelic(new FudgeBall(), RelicType.SHARED);
+        BaseMod.addRelic(new GolfBall(), RelicType.SHARED);
+        // BaseMod.addRelic(new Gumball(), RelicType.SHARED);
+        BaseMod.addRelic(new Handball(), RelicType.SHARED);
+        BaseMod.addRelic(new Kickball(), RelicType.SHARED);
+        BaseMod.addRelic(new Marble(), RelicType.RED);
+        BaseMod.addRelic(new MedicineBall(), RelicType.SHARED);
+        BaseMod.addRelic(new PachinkoBall(), RelicType.SHARED);
+        BaseMod.addRelic(new PaddleBall(), RelicType.SHARED);
+        BaseMod.addRelic(new Pinball(), RelicType.SHARED);
+        BaseMod.addRelic(new PingPongBall(), RelicType.SHARED);
+        BaseMod.addRelic(new Pokeball(), RelicType.SHARED);
+        BaseMod.addRelic(new RiceBall(), RelicType.SHARED);
+        BaseMod.addRelic(new RubberBandBall(), RelicType.SHARED);
+        BaseMod.addRelic(new RubberBouncyBall(), RelicType.SHARED);
+        // BaseMod.addRelic(new RugbyBall(), RelicType.SHARED);
+        BaseMod.addRelic(new Snowball(), RelicType.BLUE);
+        // BaseMod.addRelic(new SoccerBall(), RelicType.SHARED);
+        BaseMod.addRelic(new TennisBall(), RelicType.SHARED);
+        BaseMod.addRelic(new Volleyball(), RelicType.SHARED);
+        BaseMod.addRelic(new WaterPoloBall(), RelicType.PURPLE);
+        BaseMod.addRelic(new WhiffleBall(), RelicType.GREEN);
+        BaseMod.addRelic(new WreckingBall(), RelicType.SHARED);
 
         logger.info ("Done adding relics");
     }

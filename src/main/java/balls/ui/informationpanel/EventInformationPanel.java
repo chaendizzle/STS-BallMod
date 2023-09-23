@@ -40,7 +40,6 @@ import com.megacrit.cardcrawl.rooms.TreasureRoom;
 import basemod.ReflectionHacks;
 import basemod.eventUtil.EventUtils;
 import basemod.eventUtil.util.Condition;
-import balls.BallsInitializer;
 import balls.patches.DontGenerateNewCombatsPatch;
 import balls.patches.DontGenerateNewEventsPatch;
 import balls.relics.DiscoBall;
@@ -147,7 +146,6 @@ public class EventInformationPanel {
                 MapRoomNode node = row.get(j);
                 if (node.x == AbstractDungeon.getCurrMapNode().x && node.y == AbstractDungeon.getCurrMapNode().y) {
                     currRow = i;
-                    BallsInitializer.logger.info(currRow);
                 }
                 if (node.room != null && node.room.getMapSymbol() != null && node.room.getMapSymbol().equals("?")
                     && currRow != -1 && currRow + 1 == i
@@ -248,7 +246,7 @@ public class EventInformationPanel {
                     }
                     monsterIdx = -1;
                 } else {
-                    BallsInitializer.logger.info("Unknown room type: " + AbstractDungeon.getCurrRoom().getClass().getSimpleName());
+                    logger.info("Unknown room type: " + AbstractDungeon.getCurrRoom().getClass().getSimpleName());
                     monsterIdx = -1;
                 }
                 break;

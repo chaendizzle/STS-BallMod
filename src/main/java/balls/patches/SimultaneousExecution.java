@@ -4,7 +4,6 @@ import com.evacipated.cardcrawl.modthespire.lib.LineFinder;
 import com.evacipated.cardcrawl.modthespire.lib.Matcher;
 import com.evacipated.cardcrawl.modthespire.lib.SpireInsertLocator;
 import com.evacipated.cardcrawl.modthespire.lib.SpireInsertPatch;
-import com.evacipated.cardcrawl.modthespire.lib.SpirePatch;
 import com.evacipated.cardcrawl.modthespire.lib.SpirePatch2;
 import com.megacrit.cardcrawl.actions.GameActionManager;
 import com.megacrit.cardcrawl.actions.common.DamageAllEnemiesAction;
@@ -21,16 +20,6 @@ public class SimultaneousExecution {
 
     @SpirePatch2(
         clz = DamageAllEnemiesAction.class,
-        method = SpirePatch.CONSTRUCTOR
-    )
-    public static class ResetActionMonsterCountPatch {
-        public static void Postfix() {
-            actionMonsterCount = 0;
-        }
-    }
-
-    @SpirePatch2(
-        clz = DamageAllEnemiesAction.class,
         method = "update"
     )
     public static class IncrementAndTriggerPatch {
@@ -39,6 +28,13 @@ public class SimultaneousExecution {
         )
         public static void IncInsert() {
             actionMonsterCount++;
+        }
+
+        @SpireInsertPatch(
+            locator = ResetLocator.class
+        )
+        public static void ResetInsert() {
+            actionMonsterCount = 0;
         }
 
         @SpireInsertPatch(
@@ -58,6 +54,14 @@ public class SimultaneousExecution {
             @Override
             public int[] Locate(CtBehavior ctMethodToPatch) throws Exception {
                 Matcher finalMatcher = new Matcher.MethodCallMatcher(AbstractMonster.class, "damage");
+                return LineFinder.findInOrder(ctMethodToPatch, finalMatcher);
+            }
+        }
+
+        private static class ResetLocator extends SpireInsertLocator {
+            @Override
+            public int[] Locate(CtBehavior ctMethodToPatch) throws Exception {
+                Matcher finalMatcher = new Matcher.MethodCallMatcher(AbstractDungeon.class, "getCurrRoom");
                 return LineFinder.findInOrder(ctMethodToPatch, finalMatcher);
             }
         }

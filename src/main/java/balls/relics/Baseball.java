@@ -1,6 +1,7 @@
 package balls.relics;
 
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
+import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.powers.StrengthPower;
 import com.megacrit.cardcrawl.relics.AbstractRelic;
@@ -14,6 +15,7 @@ public class Baseball extends AbstractBallRelic {
 
     public Baseball() {
         super(RELIC_ID, NAME, AbstractRelic.RelicTier.RARE, AbstractRelic.LandingSound.FLAT);
+        this.counter = 0;
     }
 
     @Override
@@ -30,6 +32,8 @@ public class Baseball extends AbstractBallRelic {
 
     @Override
     public String getUpdatedDescription() {
+        if (relicStrings == null)
+            relicStrings = CardCrawlGame.languagePack.getRelicStrings(relicId);
         return relicStrings.DESCRIPTIONS[0] + this.counter + relicStrings.DESCRIPTIONS[1];
     }
 }

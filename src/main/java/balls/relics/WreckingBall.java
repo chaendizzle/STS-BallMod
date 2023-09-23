@@ -22,7 +22,7 @@ public class WreckingBall extends AbstractBallRelic {
         this.flash();
         for (AbstractMonster monster : AbstractDungeon.getMonsters().monsters) {
             int damage = AbstractDungeon.monsterRng.random(5, 10);
-            addToBot(new DamageAction(monster, new DamageInfo(null, damage, DamageInfo.DamageType.NORMAL), AttackEffect.BLUNT_HEAVY));
+            addToBot(new DamageAction(monster, new DamageInfo(AbstractDungeon.player, damage, DamageInfo.DamageType.NORMAL), AttackEffect.BLUNT_HEAVY));
         }
     }
 }

@@ -13,7 +13,6 @@ import com.megacrit.cardcrawl.rooms.MonsterRoomElite;
 import javassist.CannotCompileException;
 import javassist.expr.ExprEditor;
 import javassist.expr.MethodCall;
-import balls.BallsInitializer;
 import balls.helpers.EventHelper;
 
 public class DontGenerateNewCombatsPatch {
@@ -67,8 +66,6 @@ public class DontGenerateNewCombatsPatch {
     )
     public static class InitMonstersWhenPreGeneratedPatch {
         public static void Postfix(MonsterRoom __instance) {
-            BallsInitializer.logger.info("HERE");
-            BallsInitializer.logger.info(RoomFields.initMonsters.get(__instance));
             if (RoomFields.initMonsters.get(__instance)) {
                 __instance.monsters.init();
                 RoomFields.initMonsters.set(__instance, false);

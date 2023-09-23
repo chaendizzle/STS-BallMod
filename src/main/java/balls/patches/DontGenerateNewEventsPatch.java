@@ -16,7 +16,6 @@ import javassist.NotFoundException;
 import javassist.expr.ExprEditor;
 import javassist.expr.Instanceof;
 import javassist.expr.MethodCall;
-import balls.BallsInitializer;
 
 public class DontGenerateNewEventsPatch {
 
@@ -123,17 +122,13 @@ public class DontGenerateNewEventsPatch {
         method = "onPlayerEntry"
     )
     public static class PreventGeneratingEventWhenAlreadyGeneratedPatch {
-        public static void Prefix(EventRoom __instance) {
-            BallsInitializer.logger.info(__instance.event);
-        }
-
         @SpireInstrumentPatch
         public static ExprEditor Editor() {
             return new ExprEditor() {
                 public void edit(MethodCall m) {
                     try {
                         if (m.getMethodName().equals("generateEvent")) {
-                            m.replace("$_ = spelunker.patches.DontGenerateNewEventsPatch.generateEvent(this, eventRngDuplicate);");
+                            m.replace("$_ = balls.patches.DontGenerateNewEventsPatch.generateEvent(this, eventRngDuplicate);");
                         }
                     } catch (CannotCompileException e) {
                         e.printStackTrace();

@@ -10,7 +10,7 @@ public class PachinkoBall extends AbstractBallRelic {
 
     private static final String NAME = PachinkoBall.class.getSimpleName();
     public static final String RELIC_ID = BallsInitializer.makeID(NAME);
-    private static final AbstractRelic.RelicTier RELIC_TIER = AbstractRelic.RelicTier.COMMON;
+    private static final AbstractRelic.RelicTier RELIC_TIER = AbstractRelic.RelicTier.SHOP;
     private static final AbstractRelic.LandingSound SFX = AbstractRelic.LandingSound.CLINK;
 
     private Thread countdown;

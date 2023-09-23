@@ -22,6 +22,7 @@ public class DiscoBall extends AbstractBallRelic implements OnSkipCardRelic {
     @Override
     public void onSkipCard(RewardItem item) {
         this.canSkip = true;
+        this.flash();
         AbstractDungeon.getCurrRoom().rewards.remove(item);
     }
 

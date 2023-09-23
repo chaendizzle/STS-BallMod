@@ -29,6 +29,8 @@ public class TennisBall extends AbstractBallRelic implements ClickableRelic {
 
     @Override
     public void onEnterRoom(AbstractRoom room) {
-        this.counter++;
+        if (!this.grayscale) {
+            this.counter++;
+        }
     }
 }

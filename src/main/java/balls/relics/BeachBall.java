@@ -40,12 +40,14 @@ public class BeachBall extends AbstractBallRelic {
     public void onPlayCard(AbstractCard c, AbstractMonster m) {
         if (c.type == AbstractCard.CardType.POWER) {
             this.powerPlayedThisTurn = true;
+            this.flash();
         }
     }
 
     @Override
     public void onPlayerEndTurn() {
         if (!this.powerPlayedThisTurn && !this.removed) {
+            this.flash();
             this.stopPulse();
             this.removed = true;
             addToBot(new ReducePowerAction(AbstractDungeon.player, AbstractDungeon.player, DexterityPower.POWER_ID, 2));

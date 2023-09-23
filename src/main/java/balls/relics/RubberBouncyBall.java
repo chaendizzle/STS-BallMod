@@ -4,6 +4,7 @@ import com.evacipated.cardcrawl.mod.stslib.relics.ClickableRelic;
 import com.megacrit.cardcrawl.actions.AbstractGameAction.AttackEffect;
 import com.megacrit.cardcrawl.actions.common.DamageRandomEnemyAction;
 import com.megacrit.cardcrawl.cards.DamageInfo;
+import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.relics.AbstractRelic;
 
 public class RubberBouncyBall extends AbstractBallRelic implements ClickableRelic {
@@ -34,7 +35,7 @@ public class RubberBouncyBall extends AbstractBallRelic implements ClickableReli
             this.used = true;
             this.flash();
             this.stopPulse();
-            addToBot(new DamageRandomEnemyAction(new DamageInfo(null, 2), AttackEffect.SLASH_DIAGONAL));
+            addToBot(new DamageRandomEnemyAction(new DamageInfo(AbstractDungeon.player, 2), AttackEffect.SLASH_DIAGONAL));
         }
     }
 }

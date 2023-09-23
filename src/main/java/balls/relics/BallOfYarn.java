@@ -7,7 +7,7 @@ import balls.BallsInitializer;
 
 public class BallOfYarn extends AbstractBallRelic {
 
-    private final static String NAME = "CatTalisman";
+    private final static String NAME = BallOfYarn.class.getSimpleName();
     public final static String RELIC_ID = BallsInitializer.makeID(NAME);
     private final static AbstractRelic.RelicTier RELIC_TIER = AbstractRelic.RelicTier.RARE;
     private final static AbstractRelic.LandingSound SFX = AbstractRelic.LandingSound.MAGICAL;

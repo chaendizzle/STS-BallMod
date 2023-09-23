@@ -4,6 +4,7 @@ import com.evacipated.cardcrawl.mod.stslib.relics.ClickableRelic;
 import com.megacrit.cardcrawl.actions.AbstractGameAction.AttackEffect;
 import com.megacrit.cardcrawl.actions.common.DamageAllEnemiesAction;
 import com.megacrit.cardcrawl.cards.DamageInfo.DamageType;
+import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.relics.AbstractRelic;
 
 import balls.BallsInitializer;
@@ -27,7 +28,7 @@ public class RubberBandBall extends AbstractBallRelic implements ClickableRelic 
 
     @Override
     public void onRightClick() {
-        addToBot(new DamageAllEnemiesAction(null, new int[] {this.counter * 5}, DamageType.NORMAL, AttackEffect.SLASH_HORIZONTAL));
+        addToBot(new DamageAllEnemiesAction(AbstractDungeon.player, 5 * this.counter, DamageType.NORMAL, AttackEffect.SLASH_DIAGONAL));
         this.flash();
         this.usedUp();
     }

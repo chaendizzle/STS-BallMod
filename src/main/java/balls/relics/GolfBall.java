@@ -1,13 +1,11 @@
 package balls.relics;
 
 import com.megacrit.cardcrawl.actions.GameActionManager;
-import com.megacrit.cardcrawl.actions.common.GainGoldAction;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 
 import balls.BallsInitializer;
-import basemod.interfaces.StartActSubscriber;
 
-public class GolfBall extends AbstractBallRelic implements StartActSubscriber {
+public class GolfBall extends AbstractBallRelic {
 
     private final static String NAME = GolfBall.class.getSimpleName();
     public final static String RELIC_ID = BallsInitializer.makeID(NAME);
@@ -40,12 +38,7 @@ public class GolfBall extends AbstractBallRelic implements StartActSubscriber {
         }
         if (goldToGain > 0) {
             this.flash();
-            addToBot(new GainGoldAction(goldToGain));
+            AbstractDungeon.getCurrRoom().addGoldToRewards(goldToGain);
         }
-    }
-
-    @Override
-    public void receiveStartAct() {
-        this.updateDescription(AbstractDungeon.player.chosenClass);
     }
 }
