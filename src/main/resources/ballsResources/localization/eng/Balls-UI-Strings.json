@@ -1,0 +1,17 @@
+{
+    "balls:ComplimentHelper": {
+        "TEXT": [
+            "Nice balls!",
+            "Omg, your balls are so nice...",
+            "That's a magnificent pair of balls!",
+            "I wish I had balls like that...",
+            "Those are balls a father could be proud of",
+            "So round, so perfect"
+        ]
+    },
+    "balls:SpecialInteractions": {
+        "TEXT": [
+            "Please don't hurt my family..."
+        ]
+    }
+}

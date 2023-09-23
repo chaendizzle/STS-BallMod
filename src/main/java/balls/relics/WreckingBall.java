@@ -14,7 +14,7 @@ public class WreckingBall extends AbstractBallRelic {
     public final static String RELIC_ID = BallsInitializer.makeID(NAME);
 
     public WreckingBall() {
-        super(RELIC_ID, NAME, AbstractRelic.RelicTier.UNCOMMON, AbstractRelic.LandingSound.CLINK);
+        super(RELIC_ID, NAME, AbstractRelic.RelicTier.COMMON, AbstractRelic.LandingSound.HEAVY);
     }
 
     @Override

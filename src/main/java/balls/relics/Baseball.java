@@ -13,7 +13,7 @@ public class Baseball extends AbstractBallRelic {
     public final static String RELIC_ID = BallsInitializer.makeID(NAME);
 
     public Baseball() {
-        super(RELIC_ID, NAME, AbstractRelic.RelicTier.UNCOMMON, AbstractRelic.LandingSound.FLAT);
+        super(RELIC_ID, NAME, AbstractRelic.RelicTier.RARE, AbstractRelic.LandingSound.FLAT);
     }
 
     @Override
@@ -24,7 +24,12 @@ public class Baseball extends AbstractBallRelic {
     @Override
     public void onTrigger() {
         this.counter++;
+        this.updateDescription(AbstractDungeon.player.chosenClass);
         this.flash();
     }
 
+    @Override
+    public String getUpdatedDescription() {
+        return relicStrings.DESCRIPTIONS[0] + this.counter + relicStrings.DESCRIPTIONS[1];
+    }
 }

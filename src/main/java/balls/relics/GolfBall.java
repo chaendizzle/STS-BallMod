@@ -19,7 +19,7 @@ public class GolfBall extends AbstractBallRelic implements StartActSubscriber {
     private static final int BOGEY = 5;
 
     public GolfBall() {
-        super(RELIC_ID, NAME, RelicTier.COMMON, LandingSound.FLAT);
+        super(RELIC_ID, NAME, RelicTier.COMMON, LandingSound.CLINK);
     }
 
     @Override

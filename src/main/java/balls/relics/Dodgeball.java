@@ -13,10 +13,10 @@ import balls.BallsInitializer;
 
 public class Dodgeball extends AbstractBallRelic {
 
-    private static final String NAME = "HolyMantis";
+    private static final String NAME = Dodgeball.class.getSimpleName();
     public static final String RELIC_ID = BallsInitializer.makeID(NAME);
     private static final AbstractRelic.RelicTier RELIC_TIER = AbstractRelic.RelicTier.COMMON;
-    private static final AbstractRelic.LandingSound SFX = AbstractRelic.LandingSound.HEAVY;
+    private static final AbstractRelic.LandingSound SFX = AbstractRelic.LandingSound.FLAT;
 
     private static final int BUFFER_AMOUNT = 1;
     private int bufferAmount;

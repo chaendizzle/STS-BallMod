@@ -14,7 +14,7 @@ public class RubberBouncyBall extends AbstractBallRelic implements ClickableReli
     private boolean used = false;
 
     public RubberBouncyBall() {
-        super(RELIC_ID, NAME, AbstractRelic.RelicTier.UNCOMMON, AbstractRelic.LandingSound.CLINK);
+        super(RELIC_ID, NAME, AbstractRelic.RelicTier.COMMON, AbstractRelic.LandingSound.SOLID);
     }
 
     @Override

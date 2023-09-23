@@ -14,14 +14,8 @@ public class RubberBandBall extends AbstractBallRelic implements ClickableRelic 
     public final static String RELIC_ID = BallsInitializer.makeID(NAME);
 
     public RubberBandBall() {
-        super(RELIC_ID, NAME, AbstractRelic.RelicTier.RARE, AbstractRelic.LandingSound.FLAT);
-    }
-
-    @Override
-    public void atBattleStart() {
-        if (!this.usedUp) {
-            this.counter = 0;
-        }
+        super(RELIC_ID, NAME, AbstractRelic.RelicTier.RARE, AbstractRelic.LandingSound.SOLID);
+        this.counter = 0;
     }
 
     @Override

@@ -14,7 +14,7 @@ public class Volleyball extends AbstractBallRelic {
     private CardType lastType = null;
 
     public Volleyball() {
-        super(RELIC_ID, NAME, RelicTier.UNCOMMON, LandingSound.CLINK);
+        super(RELIC_ID, NAME, RelicTier.COMMON, LandingSound.FLAT);
         lastType = null;
     }
 

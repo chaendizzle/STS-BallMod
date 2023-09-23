@@ -14,7 +14,7 @@ public class Kickball extends AbstractBallRelic {
     public final static String RELIC_ID = BallsInitializer.makeID(NAME);
 
     public Kickball() {
-        super(RELIC_ID, NAME, RelicTier.COMMON, LandingSound.FLAT);
+        super(RELIC_ID, NAME, RelicTier.RARE, LandingSound.FLAT);
     }
 
     @Override

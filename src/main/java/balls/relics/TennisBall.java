@@ -13,7 +13,7 @@ public class TennisBall extends AbstractBallRelic implements ClickableRelic {
     public static final String RELIC_ID = BallsInitializer.makeID(NAME);
 
     public TennisBall() {
-        super(RELIC_ID, NAME, RelicTier.UNCOMMON, LandingSound.SOLID);
+        super(RELIC_ID, NAME, RelicTier.COMMON, LandingSound.FLAT);
         this.grayscale = false;
         this.counter = 0;
     }

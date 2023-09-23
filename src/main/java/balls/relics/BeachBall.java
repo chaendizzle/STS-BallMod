@@ -19,7 +19,7 @@ public class BeachBall extends AbstractBallRelic {
     private boolean removed = false;
 
     public BeachBall() {
-        super(RELIC_ID, NAME, AbstractRelic.RelicTier.COMMON, AbstractRelic.LandingSound.FLAT);
+        super(RELIC_ID, NAME, AbstractRelic.RelicTier.UNCOMMON, AbstractRelic.LandingSound.FLAT);
     }
 
     @Override

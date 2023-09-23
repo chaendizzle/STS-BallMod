@@ -9,10 +9,10 @@ import balls.BallsInitializer;
 
 public class Football extends AbstractBallRelic {
 
-    private static final String NAME = "PacePicante";
+    private static final String NAME = Football.class.getSimpleName();
     public static final String RELIC_ID = BallsInitializer.makeID(NAME);
     private static final AbstractRelic.RelicTier RELIC_TIER = AbstractRelic.RelicTier.BOSS;
-    private static final AbstractRelic.LandingSound SFX = AbstractRelic.LandingSound.HEAVY;
+    private static final AbstractRelic.LandingSound SFX = AbstractRelic.LandingSound.FLAT;
 
     private Thread countdown;
 

@@ -1,0 +1,233 @@
+{
+    "balls:Baal": {
+        "NAME": "Baal",
+        "FLAVOR": "TODO",
+        "DESCRIPTIONS": [
+            "Gain [E] at the start of your turn. All elites become burning elites."
+        ]
+    },
+    "balls:BallOfYarn": {
+        "NAME": "Ball of Yarn",
+        "FLAVOR": "TODO",
+        "DESCRIPTIONS": [
+            "On receiving a fatal blow, this relic instead negates the damage. You may do this #b3 times."
+        ]
+    },
+    "balls:Baseball": {
+        "NAME": "Baseball",
+        "FLAVOR": "TODO",
+        "DESCRIPTIONS": [
+            "Gain #b", " strength at the start of combat. Whenever you deal the exact amount of damage required to kill an enemy, permanently increase this value by #b1."
+        ]
+    },
+    "balls:Basketball": {
+        "NAME": "Basketball",
+        "FLAVOR": "TODO",
+        "DESCRIPTIONS": [
+            "Whenever you play cards of the same type back-to-back, gain #b1 block."
+        ]
+    },
+    "balls:BeachBall": {
+        "NAME": "Beach Ball",
+        "FLAVOR": "TODO",
+        "DESCRIPTIONS": [
+            "Gain #b2 dexterity at the start of combat. Every turn, you must play a power, or lose that #b2 dexterity."
+        ]
+    },
+    "balls:BowlingBall": {
+        "NAME": "Bowling Ball",
+        "FLAVOR": "TODO",
+        "DESCRIPTIONS": [
+            "Whenever you kill every enemy in a fight at the same time, gain [E] at the start of next combat."
+        ]
+    },
+    "balls:CheeseBall": {
+        "NAME": "Cheese Ball",
+        "FLAVOR": "TODO",
+        "DESCRIPTIONS": [
+            "Whenever you heal HP, heal 2 extra HP."
+        ]
+    },
+    "balls:CrystalBall": {
+        "NAME": "Crystal Ball",
+        "FLAVOR": "TODO",
+        "DESCRIPTIONS": [
+            "See a preview of the next combat when hovering over the nodes on the map."
+        ]
+    },
+    "balls:DiscoBall": {
+        "NAME": "Disco Ball",
+        "FLAVOR": "TODO",
+        "DESCRIPTIONS": [
+            "Whenever you choose to skip a card reward, you are able to navigate freely to the next floor."
+        ]
+    },
+    "balls:Dodgeball": {
+        "NAME": "Dodgeball",
+        "FLAVOR": "TODO",
+        "DESCRIPTIONS": [
+            "Prevent the first time you would lose HP each combat. Wears off on your second turn."
+        ]
+    },
+    "balls:EightBall": {
+        "NAME": "Eight Ball",
+        "FLAVOR": "TODO",
+        "DESCRIPTIONS": [
+            "See a preview of the next event when hovering over the nodes on the map."
+        ]
+    },
+    "balls:EnergyBall": {
+        "NAME": "Energy Ball",
+        "FLAVOR": "TODO",
+        "DESCRIPTIONS": [
+            "[#2aecd7]Once [#2aecd7]per [#2aecd7]act.[] Right-click to gain [E]"
+        ]
+    },
+    "balls:Football": {
+        "NAME": "Football",
+        "FLAVOR": "TODO",
+        "DESCRIPTIONS": [
+            "Gain [E] at the start of your turn. You may only spend #b1 minute on any given turn."
+        ]
+    },
+    "balls:Fudgeball": {
+        "NAME": "Fudge Ball",
+        "FLAVOR": "TODO",
+        "DESCRIPTIONS": [
+            "Upon pickup, regain all HP and gain #b20 max hp. Whenever you encounter another food relic, regain all your HP upon picking it up. Lee's Waffle grants #b15 max HP on pickup. Gain an extra #b1 max HP per floor. Negates the effects of Mark of the Bloom."
+        ]
+    },
+    "balls:GolfBall": {
+        "NAME": "Golf Ball",
+        "FLAVOR": "TODO",
+        "DESCRIPTIONS": [
+            "Gain gold at the end of combat based on how quickly you finish. Par is the act number. NL Hole In One: #b25 gold. NL Eagle: #b20 gold. NL Birdie: #b15 gold. NL Par: #b10 gold. NL Bogey: #b5 gold."
+        ]
+    },
+    "balls:Handball": {
+        "NAME": "Handball",
+        "FLAVOR": "TODO",
+        "DESCRIPTIONS": [
+            "Whenever you attack an enemy, deal #b2 damage to a random monster."
+        ]
+    },
+    "balls:Kickball": {
+        "NAME": "Kickball",
+        "FLAVOR": "TODO",
+        "DESCRIPTIONS": [
+            "Whenever an enemy attacks you for less than #b10 damage, deal #b10 damage back to them."
+        ]
+    },
+    "balls:Marble": {
+        "NAME": "Marble",
+        "FLAVOR": "TODO",
+        "DESCRIPTIONS": [
+            "[#2aecd7]Once [#2aecd7]per [#2aecd7]combat.[] Right-click to apply #b1 vulnerable to a random enemy."
+        ]
+    },
+    "balls:MedicineBall": {
+        "NAME": "Medicine Ball",
+        "FLAVOR": "TODO",
+        "DESCRIPTIONS": [
+            "Whenever you rest at a campfire, you may lift this relic up to #b3 times and gain strength at the start of combat. Whenever you lift with Girya, restore #b15% of your max HP."
+        ]
+    },
+    "balls:PachinkoBall": {
+        "NAME": "Pachinko Ball",
+        "FLAVOR": "TODO",
+        "DESCRIPTIONS": [
+            "For your first #b5 turns, if you finish your turn in #b15 seconds, gain #b5 gold."
+        ]
+    },
+    "balls:PaddleBall": {
+        "NAME": "Paddle Ball",
+        "FLAVOR": "TODO",
+        "DESCRIPTIONS": [
+            "The first attack each combat is reflection back onto a random enemy."
+        ]
+    },
+    "balls:Pinball": {
+        "NAME": "Pinball",
+        "FLAVOR": "TODO",
+        "DESCRIPTIONS": [
+            "Every time you attack an enemy consecutively, increase the damage dealt by #b2."
+        ]
+    },
+    "balls:PingPongBall": {
+        "NAME": "Ping Pong Ball",
+        "FLAVOR": "TODO",
+        "DESCRIPTIONS": [
+            "Every time you alternate attacks between different enemies, increase the damage dealt by #b2."
+        ]
+    },
+    "balls:Pokeball": {
+        "NAME": "Pokeball",
+        "FLAVOR": "TODO",
+        "DESCRIPTIONS": [
+            "At the end of every other combat, add #b25 gold, a potion, or a card reward to the rewards."
+        ]
+    },
+    "balls:Riceball": {
+        "NAME": "Riceball",
+        "FLAVOR": "TODO",
+        "DESCRIPTIONS": [
+            "Increase max HP by #b12."
+        ]
+    },
+    "balls:RubberBandBall": {
+        "NAME": "Rubber Band Ball",
+        "FLAVOR": "TODO",
+        "DESCRIPTIONS": [
+            "[#2aecd7]Usable [#2aecd7]only [#2aecd7]once.[] Every turn, increase the counter by 1. Right-click to unleash it's fury, dealing #b5 times the counter as damage to all enemies."
+        ]
+    },
+    "balls:RubberBouncyBall": {
+        "NAME": "Rubber Bouncy Ball",
+        "FLAVOR": "TODO",
+        "DESCRIPTIONS": [
+            "[#2aecd7]Once [#2aecd7]per [#2aecd7]turn.[] Right-click to deal #b2 damage to a random enemy."
+        ]
+    },
+    "balls:Snowball": {
+        "NAME": "Snowball",
+        "FLAVOR": "TODO",
+        "DESCRIPTIONS": [
+            "For every #b3 attacks played, channel #1 frost orb."
+        ]
+    },
+    "balls:TeninsBall": {
+        "NAME": "Tennis Ball",
+        "FLAVOR": "TODO",
+        "DESCRIPTIONS": [
+            "[#2aecd7]Usable [#2aecd7]only [#2aecd7]once.[] At the start of combat, increase the counter by #b1. Right-click to gain block equal to the counter."
+        ]
+    },
+    "balls:Volleyball": {
+        "NAME": "Volleyball",
+        "FLAVOR": "TODO",
+        "DESCRIPTIONS": [
+            "Whenever you alternate between playing attacks and skills, gain #b2 block."
+        ]
+    },
+    "balls:WaterPoloBall": {
+        "NAME": "Water Polo Ball",
+        "FLAVOR": "TODO",
+        "DESCRIPTIONS": [
+            "[#2aecd7]Once [#2aecd7]per [#2aecd7]combat.[] Right-click to enter Calm. If you are already in Calm, enter Wrath."
+        ]
+    },
+    "balls:WhiffleBall": {
+        "NAME": "WhiffleBall",
+        "FLAVOR": "TODO",
+        "DESCRIPTIONS": [
+            "Every #b4 cards you play, draw #b1 card and discard #b1 card."
+        ]
+    },
+    "balls:WreckingBall": {
+        "NAME": "Wrecking Ball",
+        "FLAVOR": "TODO",
+        "DESCRIPTIONS": [
+            "At the start of combat, deal between #b5 and #b10 damage to each enemy."
+        ]
+    }
+}

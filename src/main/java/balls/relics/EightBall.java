@@ -8,6 +8,11 @@ public class EightBall extends AbstractBallRelic {
     public final static String RELIC_ID = BallsInitializer.makeID(NAME);
 
     public EightBall() {
-        super(RELIC_ID, NAME, RelicTier.COMMON, LandingSound.CLINK);
+        super(RELIC_ID, NAME, RelicTier.UNCOMMON, LandingSound.SOLID);
+    }
+
+    @Override
+    public boolean canSpawn() {
+        return !BallsInitializer.disablePreviewRelics;
     }
 }

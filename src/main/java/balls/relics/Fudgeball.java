@@ -9,10 +9,10 @@ import balls.BallsInitializer;
 
 public class Fudgeball extends AbstractBallRelic {
 
-    private static final String NAME = "CosmicBrownie";
+    private static final String NAME = Fudgeball.class.getSimpleName();
     public static final String RELIC_ID = BallsInitializer.makeID(NAME);
     private static final AbstractRelic.RelicTier RELIC_TIER = AbstractRelic.RelicTier.BOSS;
-    private static final AbstractRelic.LandingSound SFX = AbstractRelic.LandingSound.HEAVY;
+    private static final AbstractRelic.LandingSound SFX = AbstractRelic.LandingSound.MAGICAL;
 
     private static final int MAX_HP_GAIN = 20;
 

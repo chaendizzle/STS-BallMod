@@ -12,7 +12,7 @@ public class Pokeball extends AbstractBallRelic {
     public final static String RELIC_ID = BallsInitializer.makeID(NAME);
 
     public Pokeball() {
-        super(RELIC_ID, NAME, AbstractRelic.RelicTier.UNCOMMON, AbstractRelic.LandingSound.MAGICAL);
+        super(RELIC_ID, NAME, AbstractRelic.RelicTier.COMMON, AbstractRelic.LandingSound.MAGICAL);
         this.counter = 0;
     }
 

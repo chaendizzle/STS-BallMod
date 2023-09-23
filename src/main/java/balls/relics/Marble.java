@@ -2,6 +2,7 @@ package balls.relics;
 
 import com.evacipated.cardcrawl.mod.stslib.relics.ClickableRelic;
 import com.megacrit.cardcrawl.actions.common.ApplyPowerToRandomEnemyAction;
+import com.megacrit.cardcrawl.cards.AbstractCard.CardColor;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.powers.VulnerablePower;
 
@@ -15,7 +16,7 @@ public class Marble extends AbstractBallRelic implements ClickableRelic {
     private boolean used = false;
 
     public Marble() {
-        super(RELIC_ID, NAME, RelicTier.COMMON, LandingSound.CLINK);
+        super(RELIC_ID, NAME, RelicTier.COMMON, LandingSound.CLINK, CardColor.RED);
     }
 
     @Override

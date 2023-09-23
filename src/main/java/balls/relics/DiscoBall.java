@@ -15,7 +15,7 @@ public class DiscoBall extends AbstractBallRelic implements OnSkipCardRelic {
     public boolean canSkip;
 
     public DiscoBall() {
-        super(RELIC_ID, NAME, AbstractRelic.RelicTier.UNCOMMON, AbstractRelic.LandingSound.CLINK);
+        super(RELIC_ID, NAME, AbstractRelic.RelicTier.RARE, AbstractRelic.LandingSound.CLINK);
         this.canSkip = false;
     }
 

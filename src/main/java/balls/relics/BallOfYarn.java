@@ -10,7 +10,7 @@ public class BallOfYarn extends AbstractBallRelic {
     private final static String NAME = "CatTalisman";
     public final static String RELIC_ID = BallsInitializer.makeID(NAME);
     private final static AbstractRelic.RelicTier RELIC_TIER = AbstractRelic.RelicTier.RARE;
-    private final static AbstractRelic.LandingSound SFX = AbstractRelic.LandingSound.HEAVY;
+    private final static AbstractRelic.LandingSound SFX = AbstractRelic.LandingSound.MAGICAL;
 
     private static final int LIVES = 3;
 

@@ -16,7 +16,7 @@ public class PingPongBall extends AbstractBallRelic {
     private AbstractMonster lastMonster = null;
 
     public PingPongBall() {
-        super(RELIC_ID, NAME, AbstractRelic.RelicTier.COMMON, AbstractRelic.LandingSound.FLAT);
+        super(RELIC_ID, NAME, AbstractRelic.RelicTier.UNCOMMON, AbstractRelic.LandingSound.CLINK);
     }
 
     @Override

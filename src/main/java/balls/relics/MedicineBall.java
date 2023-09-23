@@ -16,7 +16,7 @@ public class MedicineBall extends AbstractBallRelic {
     public final static String RELIC_ID = BallsInitializer.makeID(NAME);
 
     public MedicineBall() {
-        super(RELIC_ID, NAME, RelicTier.RARE, LandingSound.HEAVY);
+        super(RELIC_ID, NAME, RelicTier.UNCOMMON, LandingSound.HEAVY);
         this.counter = 0;
     }
 

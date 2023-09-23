@@ -8,6 +8,11 @@ public class CrystalBall extends AbstractBallRelic {
     public static final String RELIC_ID = BallsInitializer.makeID(NAME);
 
     public CrystalBall() {
-        super(RELIC_ID, NAME, RelicTier.COMMON, LandingSound.CLINK);
+        super(RELIC_ID, NAME, RelicTier.UNCOMMON, LandingSound.CLINK);
+    }
+
+    @Override
+    public boolean canSpawn() {
+        return !BallsInitializer.disablePreviewRelics;
     }
 }

@@ -14,7 +14,7 @@ public class BowlingBall extends AbstractBallRelic {
     private boolean gainEnergy = false;
 
     public BowlingBall() {
-        super(RELIC_ID, NAME, AbstractRelic.RelicTier.COMMON, AbstractRelic.LandingSound.FLAT);
+        super(RELIC_ID, NAME, AbstractRelic.RelicTier.UNCOMMON, AbstractRelic.LandingSound.FLAT);
     }
 
     @Override

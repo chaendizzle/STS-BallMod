@@ -15,7 +15,7 @@ public class PaddleBall extends AbstractBallRelic {
     private boolean firstAttack = true;
 
     public PaddleBall() {
-        super(RELIC_ID, NAME, AbstractRelic.RelicTier.UNCOMMON, AbstractRelic.LandingSound.FLAT);
+        super(RELIC_ID, NAME, AbstractRelic.RelicTier.COMMON, AbstractRelic.LandingSound.FLAT);
     }
 
     @Override

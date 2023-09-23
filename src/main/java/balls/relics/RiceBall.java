@@ -9,7 +9,7 @@ public class RiceBall extends AbstractBallRelic {
     public static final String RELIC_ID = BallsInitializer.makeID(NAME);
 
     public RiceBall() {
-        super(RELIC_ID, NAME, RelicTier.UNCOMMON, LandingSound.MAGICAL);
+        super(RELIC_ID, NAME, RelicTier.COMMON, LandingSound.MAGICAL);
     }
 
     @Override
