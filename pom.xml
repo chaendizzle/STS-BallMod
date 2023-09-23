@@ -3,11 +3,11 @@
 
     <modelVersion>4.0.0</modelVersion>
 
-    <groupId>blankmod</groupId>
-    <artifactId>BlankMod</artifactId>
-    <version>0.0.1</version>
+    <groupId>balls</groupId>
+    <artifactId>balls</artifactId>
+    <version>1.0.0</version>
     <packaging>jar</packaging>
-    <name>BlankMod</name>
+    <name>Balls</name>
     <description>Blank Slate for STS Modding</description>
 
     <dependencies>
@@ -43,7 +43,7 @@
     </dependencies>
 
     <properties>
-        <ModID>BlankMod</ModID>
+        <ModID>Balls</ModID>
         <SlayTheSpire.version>12-18-2022</SlayTheSpire.version>
         <ModTheSpire.version>3.30.3</ModTheSpire.version>
 
@@ -52,7 +52,7 @@
     </properties>
 
     <build>
-        <finalName>BlankMod</finalName>
+        <finalName>Balls</finalName>
         <plugins>
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
@@ -60,7 +60,7 @@
                 <version>2.4.2</version>
                 <executions>
                     <execution>
-                        <id>BlankMod</id>
+                        <id>Balls</id>
                         <phase>package</phase>
                         <goals>
                             <goal>shade</goal>
@@ -68,7 +68,7 @@
                         <configuration>
                             <filters>
                                 <filter>
-                                    <artifact>blankmod:BlankMod</artifact>
+                                    <artifact>balls:Balls</artifact>
                                 </filter>
                             </filters>
                         </configuration>
@@ -85,7 +85,7 @@
                         <phase>package</phase>
                         <configuration>
                             <target>
-                                <copy file="target/BlankMod.jar" tofile="../_ModTheSpire/mods/BlankMod.jar"/>
+                                <copy file="target/Balls.jar" tofile="../_ModTheSpire/mods/Balls.jar"/>
                             </target>
                         </configuration>
                         <goals>
