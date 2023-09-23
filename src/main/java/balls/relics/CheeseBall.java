@@ -1,9 +1,26 @@
 package balls.relics;
 
-/**
- * On player heal, gain 2 extra hp.
- */
+import com.megacrit.cardcrawl.actions.common.HealAction;
+import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
+import com.megacrit.cardcrawl.potions.Elixir;
+import balls.BallsInitializer;
 
-public class CheeseBall {
-    
+public class CheeseBall extends AbstractBallRelic {
+
+    private static final String NAME = Elixir.class.getSimpleName();
+    public static final String RELIC_ID = BallsInitializer.makeID(NAME);
+
+    public CheeseBall() {
+        super(RELIC_ID, NAME, RelicTier.COMMON, LandingSound.FLAT);
+    }
+
+    @Override
+    public void onEquip() {
+        addToBot(new HealAction(AbstractDungeon.player, AbstractDungeon.player, AbstractDungeon.player.maxHealth / 2));
+    }
+
+    @Override
+    public int onPlayerHeal(int healAmount) {
+        return healAmount + 2;
+    }
 }
