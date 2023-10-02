@@ -9,8 +9,8 @@ import com.megacrit.cardcrawl.relics.AbstractRelic;
 
 public class RubberBouncyBall extends AbstractBallRelic implements ClickableRelic {
 
-    private final static String NAME = RubberBouncyBall.class.getSimpleName();
-    public final static String RELIC_ID = balls.BallsInitializer.makeID(NAME);
+    private static final String NAME = RubberBouncyBall.class.getSimpleName();
+    public static final String RELIC_ID = balls.BallsInitializer.makeID(NAME);
 
     private boolean used = false;
 
@@ -21,7 +21,7 @@ public class RubberBouncyBall extends AbstractBallRelic implements ClickableReli
     @Override
     public void atTurnStart() {
         used = false;
-        this.beginPulse();
+        this.beginLongPulse();
     }
 
     @Override

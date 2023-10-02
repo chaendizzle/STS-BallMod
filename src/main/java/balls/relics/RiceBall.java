@@ -14,6 +14,10 @@ public class RiceBall extends AbstractBallRelic {
 
     @Override
     public void onEquip() {
-        AbstractDungeon.player.increaseMaxHp(12, true);
+        int hpToRecover = (int)((AbstractDungeon.player.maxHealth - AbstractDungeon.player.currentHealth) / 2.0F);
+        if (hpToRecover > 0) {
+            this.flash();
+            AbstractDungeon.player.heal(hpToRecover);
+        }
     }
 }

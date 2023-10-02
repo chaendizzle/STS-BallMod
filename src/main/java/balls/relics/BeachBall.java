@@ -13,7 +13,7 @@ import balls.BallsInitializer;
 public class BeachBall extends AbstractBallRelic {
 
     private static final String NAME = BeachBall.class.getSimpleName();
-    public final static String RELIC_ID = BallsInitializer.makeID(NAME);
+    public static final String RELIC_ID = BallsInitializer.makeID(NAME);
 
     private boolean powerPlayedThisTurn = false;
     private boolean removed = false;
@@ -26,9 +26,10 @@ public class BeachBall extends AbstractBallRelic {
     public void atBattleStart() {
         addToBot(new ApplyPowerAction(AbstractDungeon.player, AbstractDungeon.player, new DexterityPower(AbstractDungeon.player, 2), 2));
         this.flash();
-        this.beginPulse();
+        this.beginLongPulse();
         this.powerPlayedThisTurn = false;
         this.removed = false;
+        this.grayscale = false;
     }
 
     @Override
@@ -48,6 +49,7 @@ public class BeachBall extends AbstractBallRelic {
     public void onPlayerEndTurn() {
         if (!this.powerPlayedThisTurn && !this.removed) {
             this.flash();
+            this.grayscale = true;
             this.stopPulse();
             this.removed = true;
             addToBot(new ReducePowerAction(AbstractDungeon.player, AbstractDungeon.player, DexterityPower.POWER_ID, 2));

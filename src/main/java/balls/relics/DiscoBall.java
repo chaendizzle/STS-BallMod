@@ -9,12 +9,12 @@ import balls.BallsInitializer;
 
 public class DiscoBall extends AbstractBallRelic implements OnSkipCardRelic {
 
-    private final static String NAME = DiscoBall.class.getSimpleName();
-    public final static String RELIC_ID = BallsInitializer.makeID(NAME);
+    private static final String NAME = DiscoBall.class.getSimpleName();
+    public static final String RELIC_ID = BallsInitializer.makeID(NAME);
 
     public boolean canSkip;
 
-    public DiscoBall() {
+    public DiscoBall() { // TODO: broken
         super(RELIC_ID, NAME, AbstractRelic.RelicTier.RARE, AbstractRelic.LandingSound.CLINK);
         this.canSkip = false;
     }

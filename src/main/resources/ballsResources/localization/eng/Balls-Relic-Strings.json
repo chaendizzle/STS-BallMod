@@ -34,11 +34,29 @@
             "Gain #b2 dexterity at the start of combat. Every turn, you must play a power, or lose that #b2 dexterity."
         ]
     },
+    "balls:BingoBall": {
+        "NAME": "Bingo Ball",
+        "FLAVOR": "TODO",
+        "DESCRIPTIONS": [
+        ]
+    },
     "balls:BowlingBall": {
         "NAME": "Bowling Ball",
         "FLAVOR": "TODO",
         "DESCRIPTIONS": [
-            "Whenever you kill every enemy in a fight at the same time, gain [E] at the start of next combat."
+            "Whenever you kill every enemy on the same turn, at the start of next combat, your first attack deals double damage."
+        ]
+    },
+    "balls:Butterball": {
+        "NAME": "Butterball",
+        "FLAVOR": "TODO",
+        "DESCRIPTIONS": [
+        ]
+    },
+    "balls:Cannonball": {
+        "NAME": "Cannonball",
+        "FLAVOR": "TODO",
+        "DESCRIPTIONS": [
         ]
     },
     "balls:CheeseBall": {
@@ -46,6 +64,20 @@
         "FLAVOR": "TODO",
         "DESCRIPTIONS": [
             "Whenever you heal HP, heal 2 extra HP."
+        ]
+    },
+    "balls:Cottonball": {
+        "NAME": "Cottonball",
+        "FLAVOR": "TODO",
+        "DESCRIPTIONS": [
+        ]
+    },
+    "balls:CricketBall": {
+        "NAME": "Cricket Ball",
+        "FLAVOR": "TODO",
+        "DESCRIPTIONS": [
+            "The first attack you play at the start of battle costs 0 and does double damage.",
+            "Credit to #gBento #gBaker #gPraymordis for coming up with the effect for this relic."
         ]
     },
     "balls:CrystalBall": {
@@ -69,6 +101,13 @@
             "Prevent the first time you would lose HP each combat. Wears off on your second turn."
         ]
     },
+    "balls:DragonBall": {
+        "NAME": "Dragon Ball",
+        "FLAVOR": "TODO",
+        "DESCRIPTIONS": [
+            "[#2aecd7]Once [#2aecd7]per [#2aecd7]act.[] Right-click to make a wish."
+        ]
+    },
     "balls:EightBall": {
         "NAME": "Eight Ball",
         "FLAVOR": "TODO",
@@ -81,6 +120,19 @@
         "FLAVOR": "TODO",
         "DESCRIPTIONS": [
             "[#2aecd7]Once [#2aecd7]per [#2aecd7]act.[] Right-click to gain [E]"
+        ]
+    },
+    "balls:Eyeball": {
+        "NAME": "Eyeball",
+        "FLAVOR": "TODO",
+        "DESCRIPTIONS": [
+            "[#2aecd7]Once [#2aecd7]per [#2aecd7]act.[] Right-click to use. Choose a card in your draw pile, that card is played twice then exhausted."
+        ]
+    },
+    "balls:Fireball": {
+        "NAME": "Fireball",
+        "FLAVOR": "TODO",
+        "DESCRIPTIONS": [
         ]
     },
     "balls:Football": {
@@ -104,6 +156,21 @@
             "Gain gold at the end of combat based on how quickly you finish. Par is the act number. NL Hole In One: #b25 gold. NL Eagle: #b20 gold. NL Birdie: #b15 gold. NL Par: #b10 gold. NL Bogey: #b5 gold."
         ]
     },
+    "balls:Gumball": {
+        "NAME": "Gumball",
+        "FLAVOR": "TODO",
+        "DESCRIPTIONS": [
+            "Whenever you play an attack, gain #b1 health."
+        ]
+    },
+    "balls:Hairball": {
+        "NAME": "Hairball",
+        "FLAVOR": "TODO",
+        "DESCRIPTIONS": [
+            "At that start of combat, there is a #b50% chance for a random enemy to become stunned. Every 3 times this happens, gain #b1 entangle.",
+            "Credit to #gpgames-food for coming up with the effect for this relic."
+        ]
+    },
     "balls:Handball": {
         "NAME": "Handball",
         "FLAVOR": "TODO",
@@ -125,11 +192,25 @@
             "[#2aecd7]Once [#2aecd7]per [#2aecd7]combat.[] Right-click to apply #b1 vulnerable to a random enemy."
         ]
     },
+    "balls:Meatball": {
+        "NAME": "Meatball",
+        "FLAVOR": "TODO",
+        "DESCRIPTIONS": [
+        ]
+    },
     "balls:MedicineBall": {
         "NAME": "Medicine Ball",
         "FLAVOR": "TODO",
         "DESCRIPTIONS": [
             "Whenever you rest at a campfire, you may lift this relic up to #b3 times and gain strength at the start of combat. Whenever you lift with Girya, restore #b15% of your max HP."
+        ]
+    },
+    "balls:Mudball": {
+        "NAME": "Mudball",
+        "FLAVOR": "TODO",
+        "DESCRIPTIONS": [
+            "Whenever you are attacked, increase the counter by #b1. At the start of your turn, gain block equal to the counter. Whenever you attack an enemy, decrease the counter by #b1 and the enemy takes #b1 damage at the start of their next turn. Effect resets between combats.",
+            "Credit to #gpgames-food for coming up with the effect for this relic."
         ]
     },
     "balls:PachinkoBall": {
@@ -143,7 +224,7 @@
         "NAME": "Paddle Ball",
         "FLAVOR": "TODO",
         "DESCRIPTIONS": [
-            "The first attack each combat is reflection back onto a random enemy."
+            "The first attack you receive each combat is reflected back onto a random enemy."
         ]
     },
     "balls:Pinball": {
@@ -171,7 +252,13 @@
         "NAME": "Rice Ball",
         "FLAVOR": "TODO",
         "DESCRIPTIONS": [
-            "Increase max HP by #b12."
+            "Heal for half of your missing health."
+        ]
+    },
+    "balls:RugbyBall": {
+        "NAME": "RugbyBall",
+        "FLAVOR": "TODO",
+        "DESCRIPTIONS": [
         ]
     },
     "balls:RubberBandBall": {
@@ -188,6 +275,13 @@
             "[#2aecd7]Once [#2aecd7]per [#2aecd7]turn.[] Right-click to deal #b2 damage to a random enemy."
         ]
     },
+    "balls:SoccerBall": {
+        "NAME": "Soccer Ball",
+        "FLAVOR": "TODO",
+        "DESCRIPTIONS": [
+            "Draw an extra card next turn for each remaining [E] this turn."
+        ]
+    },
     "balls:Snowball": {
         "NAME": "Snowball",
         "FLAVOR": "TODO",
@@ -195,11 +289,23 @@
             "For every #b3 attacks played, channel #1 frost orb."
         ]
     },
+    "balls:StressBall": {
+        "NAME": "Bingo Ball",
+        "FLAVOR": "TODO",
+        "DESCRIPTIONS": [
+        ]
+    },
     "balls:TennisBall": {
         "NAME": "Tennis Ball",
         "FLAVOR": "TODO",
         "DESCRIPTIONS": [
             "[#2aecd7]Usable [#2aecd7]only [#2aecd7]once.[] At the start of combat, increase the counter by #b1. Right-click to gain block equal to the counter."
+        ]
+    },
+    "balls:Tetherball": {
+        "NAME": "Tetherball",
+        "FLAVOR": "TODO",
+        "DESCRIPTIONS": [
         ]
     },
     "balls:Volleyball": {
@@ -228,6 +334,12 @@
         "FLAVOR": "TODO",
         "DESCRIPTIONS": [
             "At the start of combat, deal between #b5 and #b10 damage to each enemy."
+        ]
+    },
+    "balls:YogaBall": {
+        "NAME": "Yoga Ball",
+        "FLAVOR": "TODO",
+        "DESCRIPTIONS": [
         ]
     }
 }

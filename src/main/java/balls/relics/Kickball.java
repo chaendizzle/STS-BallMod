@@ -10,8 +10,8 @@ import balls.BallsInitializer;
 
 public class Kickball extends AbstractBallRelic {
 
-    private final static String NAME = Kickball.class.getSimpleName();
-    public final static String RELIC_ID = BallsInitializer.makeID(NAME);
+    private static final String NAME = Kickball.class.getSimpleName();
+    public static final String RELIC_ID = BallsInitializer.makeID(NAME);
 
     public Kickball() {
         super(RELIC_ID, NAME, RelicTier.RARE, LandingSound.FLAT);

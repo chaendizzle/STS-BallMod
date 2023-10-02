@@ -12,8 +12,8 @@ import balls.BallsInitializer;
 
 public class Snowball extends AbstractBallRelic {
 
-    private final static String NAME = Snowball.class.getSimpleName();
-    public final static String RELIC_ID = BallsInitializer.makeID(NAME);
+    private static final String NAME = Snowball.class.getSimpleName();
+    public static final String RELIC_ID = BallsInitializer.makeID(NAME);
 
     public Snowball() {
         super(RELIC_ID, NAME, AbstractRelic.RelicTier.UNCOMMON, AbstractRelic.LandingSound.MAGICAL, CardColor.BLUE);

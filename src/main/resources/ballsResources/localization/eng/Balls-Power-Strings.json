@@ -1,0 +1,6 @@
+{
+    "balls:TakeDamageNextTurn": {
+        "NAME": "Take Damage Next Turn",
+        "DESCRIPTIONS": ["At the start of this enemy's turn, this enemy will take #b", " damage."]
+    }
+}

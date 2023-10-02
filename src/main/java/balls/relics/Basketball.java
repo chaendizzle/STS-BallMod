@@ -11,8 +11,8 @@ import balls.BallsInitializer;
 
 public class Basketball extends AbstractBallRelic {
 
-    private final static String NAME = Basketball.class.getSimpleName();
-    public final static String RELIC_ID = BallsInitializer.makeID(NAME);
+    private static final String NAME = Basketball.class.getSimpleName();
+    public static final String RELIC_ID = BallsInitializer.makeID(NAME);
 
     private CardType lastCardType = null;
 

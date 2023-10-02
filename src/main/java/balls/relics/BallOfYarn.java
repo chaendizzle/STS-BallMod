@@ -7,10 +7,10 @@ import balls.BallsInitializer;
 
 public class BallOfYarn extends AbstractBallRelic {
 
-    private final static String NAME = BallOfYarn.class.getSimpleName();
-    public final static String RELIC_ID = BallsInitializer.makeID(NAME);
-    private final static AbstractRelic.RelicTier RELIC_TIER = AbstractRelic.RelicTier.RARE;
-    private final static AbstractRelic.LandingSound SFX = AbstractRelic.LandingSound.MAGICAL;
+    private static final String NAME = BallOfYarn.class.getSimpleName();
+    public static final String RELIC_ID = BallsInitializer.makeID(NAME);
+    private static final AbstractRelic.RelicTier RELIC_TIER = AbstractRelic.RelicTier.RARE;
+    private static final AbstractRelic.LandingSound SFX = AbstractRelic.LandingSound.MAGICAL;
 
     private static final int LIVES = 3;
 
@@ -31,7 +31,7 @@ public class BallOfYarn extends AbstractBallRelic {
             this.flash();
             this.counter--;
             if (this.counter <= 0)
-                this.grayscale = true;
+                this.usedUp();
             return 0;
         } else {
             return damageAmount;

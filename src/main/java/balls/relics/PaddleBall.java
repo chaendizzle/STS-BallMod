@@ -9,8 +9,8 @@ import balls.BallsInitializer;
 
 public class PaddleBall extends AbstractBallRelic {
 
-    private final static String NAME = PaddleBall.class.getSimpleName();
-    public final static String RELIC_ID = BallsInitializer.makeID(NAME);
+    private static final String NAME = PaddleBall.class.getSimpleName();
+    public static final String RELIC_ID = BallsInitializer.makeID(NAME);
 
     private boolean firstAttack = true;
 

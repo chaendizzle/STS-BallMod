@@ -10,8 +10,8 @@ import balls.BallsInitializer;
 
 public class Baseball extends AbstractBallRelic {
 
-    private final static String NAME = Baseball.class.getSimpleName();
-    public final static String RELIC_ID = BallsInitializer.makeID(NAME);
+    private static final String NAME = Baseball.class.getSimpleName();
+    public static final String RELIC_ID = BallsInitializer.makeID(NAME);
 
     public Baseball() {
         super(RELIC_ID, NAME, AbstractRelic.RelicTier.RARE, AbstractRelic.LandingSound.FLAT);

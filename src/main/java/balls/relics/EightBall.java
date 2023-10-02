@@ -4,8 +4,8 @@ import balls.BallsInitializer;
 
 public class EightBall extends AbstractBallRelic {
 
-    private final static String NAME = EightBall.class.getSimpleName();
-    public final static String RELIC_ID = BallsInitializer.makeID(NAME);
+    private static final String NAME = EightBall.class.getSimpleName();
+    public static final String RELIC_ID = BallsInitializer.makeID(NAME);
 
     public EightBall() {
         super(RELIC_ID, NAME, RelicTier.UNCOMMON, LandingSound.SOLID);

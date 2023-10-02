@@ -23,6 +23,7 @@ import com.megacrit.cardcrawl.core.Settings;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.events.beyond.MysteriousSphere;
 import com.megacrit.cardcrawl.helpers.FontHelper;
+import com.megacrit.cardcrawl.localization.PowerStrings;
 import com.megacrit.cardcrawl.localization.RelicStrings;
 import com.megacrit.cardcrawl.localization.UIStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
@@ -223,6 +224,10 @@ public class BallsInitializer implements
 
         pathCheck();
 
+        // PowerStrings
+        BaseMod.loadCustomStringsFile(PowerStrings.class,
+            getModID() + "Resources/localization/eng/Balls-Power-Strings.json");
+
         // RelicStrings
         BaseMod.loadCustomStringsFile(RelicStrings.class,
             getModID() + "Resources/localization/eng/Balls-Relic-Strings.json");
@@ -265,23 +270,32 @@ public class BallsInitializer implements
         BaseMod.addRelic(new Baseball(), RelicType.SHARED);
         BaseMod.addRelic(new Basketball(), RelicType.SHARED);
         BaseMod.addRelic(new BeachBall(), RelicType.SHARED);
+        // BaseMod.addRelic(new BingoBall(), RelicType.SHARED);
         BaseMod.addRelic(new BowlingBall(), RelicType.SHARED);
+        // BaseMod.addRelic(new Butterball(), RelicType.SHARED);
+        // BaseMod.addRelic(new Cannonball(), RelicType.SHARED);
         BaseMod.addRelic(new CheeseBall(), RelicType.SHARED);
+        // BaseMod.addRelic(new CottonBall(), RelicType.SHARED);
+        BaseMod.addRelic(new CricketBall(), RelicType.SHARED);
         BaseMod.addRelic(new CrystalBall(), RelicType.SHARED);
-        // BaseMod.addRelic(new DiscoBall(), RelicType.SHARED);
+        // BaseMod.addRelic(new DiscoBall(), RelicType.SHARED); // TODO: BROKEN
         BaseMod.addRelic(new Dodgeball(), RelicType.SHARED);
-        // BaseMod.addRelic(new DragonBall(), RelicType.SHARED);
+        BaseMod.addRelic(new DragonBall(), RelicType.SHARED);
         BaseMod.addRelic(new EightBall(), RelicType.SHARED);
         BaseMod.addRelic(new EnergyBall(), RelicType.SHARED);
-        // BaseMod.addRelic(new Eyeball(), RelicType.SHARED);
+        BaseMod.addRelic(new Eyeball(), RelicType.SHARED);
+        // BaseMod.addRelic(new Fireball(), RelicType.SHARED);
         BaseMod.addRelic(new Football(), RelicType.SHARED);
-        // BaseMod.addRelic(new FudgeBall(), RelicType.SHARED);
+        BaseMod.addRelic(new FudgeBall(), RelicType.SHARED);
         BaseMod.addRelic(new GolfBall(), RelicType.SHARED);
-        // BaseMod.addRelic(new Gumball(), RelicType.SHARED);
+        BaseMod.addRelic(new Gumball(), RelicType.SHARED);
         BaseMod.addRelic(new Handball(), RelicType.SHARED);
+        BaseMod.addRelic(new Hairball(), RelicType.SHARED);
         BaseMod.addRelic(new Kickball(), RelicType.SHARED);
         BaseMod.addRelic(new Marble(), RelicType.RED);
+        // BaseMod.addRelic(new Meatball(), RelicType.SHARED);
         BaseMod.addRelic(new MedicineBall(), RelicType.SHARED);
+        BaseMod.addRelic(new Mudball(), RelicType.SHARED);
         BaseMod.addRelic(new PachinkoBall(), RelicType.SHARED);
         BaseMod.addRelic(new PaddleBall(), RelicType.SHARED);
         BaseMod.addRelic(new Pinball(), RelicType.SHARED);
@@ -292,12 +306,15 @@ public class BallsInitializer implements
         BaseMod.addRelic(new RubberBouncyBall(), RelicType.SHARED);
         // BaseMod.addRelic(new RugbyBall(), RelicType.SHARED);
         BaseMod.addRelic(new Snowball(), RelicType.BLUE);
-        // BaseMod.addRelic(new SoccerBall(), RelicType.SHARED);
+        // BaseMod.addRelic(new SoccerBall(), RelicType.SHARED); // TODO: effect broken
+        // BaseMod.addRelic(new StressBall(), RelicType.SHARED);
         BaseMod.addRelic(new TennisBall(), RelicType.SHARED);
+        // BaseMod.addRelic(new Tetherball(), RelicType.SHARED);
         BaseMod.addRelic(new Volleyball(), RelicType.SHARED);
         BaseMod.addRelic(new WaterPoloBall(), RelicType.PURPLE);
         BaseMod.addRelic(new WhiffleBall(), RelicType.GREEN);
         BaseMod.addRelic(new WreckingBall(), RelicType.SHARED);
+        // BaseMod.addRelic(new YogaBall(), RelicType.SHARED);
 
         logger.info ("Done adding relics");
     }
@@ -314,13 +331,16 @@ public class BallsInitializer implements
         for (AbstractRelic relic : AbstractDungeon.player.relics) {
             if (relic instanceof AbstractBallRelic) {
                 for (AbstractMonster monster : room.monsters.monsters) {
+                    String compliment = "";
                     if (monster.id.equals(MysteriousSphere.ID)) {
-                        AbstractDungeon.actionManager.addToBottom(
-                            new TalkAction(monster, ComplimentHelper.getMysteriousSpherePhrase(), 3.0F, 3.0F));
+                        compliment = ComplimentHelper.getMysteriousSpherePhrase();
+                    } else if (AbstractDungeon.player.hasRelic(Eyeball.RELIC_ID) && AbstractDungeon.miscRng.random(1, 10) == 1) {
+                        compliment = ComplimentHelper.getEyeballPhrase();
                     } else {
-                        AbstractDungeon.actionManager.addToBottom(
-                            new TalkAction(monster, ComplimentHelper.getCompliment(), 3.0F, 3.0F));
+                        compliment = ComplimentHelper.getCompliment();
                     }
+                    AbstractDungeon.actionManager.addToBottom(
+                        new TalkAction(monster, compliment, 3.0F, 3.0F));
                 }
                 break;
             }

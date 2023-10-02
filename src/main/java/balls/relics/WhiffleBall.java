@@ -10,8 +10,8 @@ import com.megacrit.cardcrawl.relics.AbstractRelic;
 
 public class WhiffleBall extends AbstractBallRelic {
 
-    private final static String NAME = WhiffleBall.class.getSimpleName();
-    public final static String RELIC_ID = balls.BallsInitializer.makeID(NAME);
+    private static final String NAME = WhiffleBall.class.getSimpleName();
+    public static final String RELIC_ID = balls.BallsInitializer.makeID(NAME);
 
     public WhiffleBall() {
         super(RELIC_ID, NAME, AbstractRelic.RelicTier.UNCOMMON, AbstractRelic.LandingSound.CLINK, CardColor.GREEN);

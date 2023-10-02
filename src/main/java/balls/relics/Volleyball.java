@@ -8,8 +8,8 @@ import com.megacrit.cardcrawl.monsters.AbstractMonster;
 
 public class Volleyball extends AbstractBallRelic {
 
-    private final static String NAME = Volleyball.class.getSimpleName();
-    public final static String RELIC_ID = balls.BallsInitializer.makeID(NAME);
+    private static final String NAME = Volleyball.class.getSimpleName();
+    public static final String RELIC_ID = balls.BallsInitializer.makeID(NAME);
 
     private CardType lastType = null;
 

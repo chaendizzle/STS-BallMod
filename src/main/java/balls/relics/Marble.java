@@ -10,8 +10,8 @@ import balls.BallsInitializer;
 
 public class Marble extends AbstractBallRelic implements ClickableRelic {
 
-    private final static String NAME = Marble.class.getSimpleName();
-    public final static String RELIC_ID = BallsInitializer.makeID(NAME);
+    private static final String NAME = Marble.class.getSimpleName();
+    public static final String RELIC_ID = BallsInitializer.makeID(NAME);
 
     private boolean used = false;
 
@@ -31,7 +31,7 @@ public class Marble extends AbstractBallRelic implements ClickableRelic {
 
     @Override
     public void atBattleStart() {
-        this.beginPulse();
+        this.beginLongPulse();
         this.used = false;
     }
 

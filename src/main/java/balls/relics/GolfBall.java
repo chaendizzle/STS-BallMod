@@ -7,8 +7,8 @@ import balls.BallsInitializer;
 
 public class GolfBall extends AbstractBallRelic {
 
-    private final static String NAME = GolfBall.class.getSimpleName();
-    public final static String RELIC_ID = BallsInitializer.makeID(NAME);
+    private static final String NAME = GolfBall.class.getSimpleName();
+    public static final String RELIC_ID = BallsInitializer.makeID(NAME);
 
     private static final int HOLE_IN_ONE = 25;
     private static final int EAGLE = 20;

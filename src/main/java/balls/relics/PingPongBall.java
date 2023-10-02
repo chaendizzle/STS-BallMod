@@ -10,8 +10,8 @@ import balls.BallsInitializer;
 
 public class PingPongBall extends AbstractBallRelic {
 
-    private final static String NAME = PingPongBall.class.getSimpleName();
-    public final static String RELIC_ID = BallsInitializer.makeID(NAME);
+    private static final String NAME = PingPongBall.class.getSimpleName();
+    public static final String RELIC_ID = BallsInitializer.makeID(NAME);
 
     private AbstractMonster lastMonster = null;
 

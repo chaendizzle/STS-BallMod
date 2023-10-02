@@ -10,8 +10,8 @@ import com.megacrit.cardcrawl.stances.WrathStance;
 
 public class WaterPoloBall extends AbstractBallRelic implements ClickableRelic {
 
-    private final static String NAME = WaterPoloBall.class.getSimpleName();
-    public final static String RELIC_ID = balls.BallsInitializer.makeID(NAME);
+    private static final String NAME = WaterPoloBall.class.getSimpleName();
+    public static final String RELIC_ID = balls.BallsInitializer.makeID(NAME);
 
     private boolean used = false;
 

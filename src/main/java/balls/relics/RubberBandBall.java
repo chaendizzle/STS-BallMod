@@ -11,8 +11,8 @@ import balls.BallsInitializer;
 
 public class RubberBandBall extends AbstractBallRelic implements ClickableRelic {
 
-    private final static String NAME = RubberBandBall.class.getSimpleName();
-    public final static String RELIC_ID = BallsInitializer.makeID(NAME);
+    private static final String NAME = RubberBandBall.class.getSimpleName();
+    public static final String RELIC_ID = BallsInitializer.makeID(NAME);
 
     public RubberBandBall() {
         super(RELIC_ID, NAME, AbstractRelic.RelicTier.RARE, AbstractRelic.LandingSound.SOLID);
