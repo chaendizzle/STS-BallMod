@@ -32,7 +32,7 @@ import com.megacrit.cardcrawl.rooms.AbstractRoom;
 import balls.helpers.ComplimentHelper;
 import balls.relics.*;
 import balls.ui.informationpanel.CombatInformationPanel;
-import balls.ui.informationpanel.EventInformationPanel;
+// import balls.ui.informationpanel.EventInformationPanel;
 import balls.util.IDCheckDontTouchPls;
 import balls.util.TextureLoader;
 
@@ -281,7 +281,7 @@ public class BallsInitializer implements
         // BaseMod.addRelic(new DiscoBall(), RelicType.SHARED); // TODO: BROKEN
         BaseMod.addRelic(new Dodgeball(), RelicType.SHARED);
         BaseMod.addRelic(new DragonBall(), RelicType.SHARED);
-        BaseMod.addRelic(new EightBall(), RelicType.SHARED);
+        // BaseMod.addRelic(new EightBall(), RelicType.SHARED); // TODO: BROKEN
         BaseMod.addRelic(new EnergyBall(), RelicType.SHARED);
         BaseMod.addRelic(new Eyeball(), RelicType.SHARED);
         // BaseMod.addRelic(new Fireball(), RelicType.SHARED);
@@ -355,7 +355,7 @@ public class BallsInitializer implements
     @Override
     public void receivePostUpdate() {
         if (!disablePreviewRelics) {
-            EventInformationPanel.panel().update();
+            // EventInformationPanel.panel().update();
             CombatInformationPanel.panel().update();
         }
     }
@@ -363,7 +363,7 @@ public class BallsInitializer implements
     @Override
     public void receivePostRender(SpriteBatch sb) {
         if (!disablePreviewRelics) {
-            EventInformationPanel.panel().render(sb);
+            // EventInformationPanel.panel().render(sb);
             CombatInformationPanel.panel().render(sb);
         }
     }
