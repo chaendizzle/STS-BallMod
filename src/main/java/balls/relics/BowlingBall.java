@@ -1,6 +1,8 @@
 package balls.relics;
 
 import com.evacipated.cardcrawl.mod.stslib.relics.OnAfterUseCardRelic;
+import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
+import com.megacrit.cardcrawl.actions.common.RelicAboveCreatureAction;
 import com.megacrit.cardcrawl.actions.utility.UseCardAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
@@ -8,13 +10,14 @@ import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.relics.AbstractRelic;
 
 import balls.BallsInitializer;
+import balls.powers.BowlingBallPower;
 
 public class BowlingBall extends AbstractBallRelic implements OnAfterUseCardRelic {
 
     private static final String NAME = BowlingBall.class.getSimpleName();
     public static final String RELIC_ID = BallsInitializer.makeID(NAME);
 
-    private boolean doubleDamage = false;
+    public boolean doubleDamage = false;
     private int startingMonsters;
     private int livingMonsters;
 
@@ -26,6 +29,11 @@ public class BowlingBall extends AbstractBallRelic implements OnAfterUseCardReli
     public void atBattleStart() {
         this.startingMonsters = AbstractDungeon.getMonsters().monsters.size();
         this.livingMonsters = this.startingMonsters;
+        if (this.doubleDamage) {
+            addToBot(new RelicAboveCreatureAction(AbstractDungeon.player, this));
+            addToBot(new ApplyPowerAction(AbstractDungeon.player, AbstractDungeon.player, new BowlingBallPower(AbstractDungeon.player, 1), 1));
+            this.doubleDamage = false;
+        }
     }
 
     @Override
@@ -46,16 +54,8 @@ public class BowlingBall extends AbstractBallRelic implements OnAfterUseCardReli
     }
 
     @Override
-    public float atDamageModify(float damage, AbstractCard c) {
-        if (this.doubleDamage)
-            return damage * 2.0F;
-        return damage;
-    }
-
-    @Override
     public void onAfterUseCard(AbstractCard card, UseCardAction action) {
-        if (this.doubleDamage && card.type == AbstractCard.CardType.ATTACK) {
-            this.doubleDamage = false;
+        if (this.pulse && card.type == AbstractCard.CardType.ATTACK) {
             this.stopPulse();
         }
     }

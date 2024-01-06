@@ -13,8 +13,6 @@ public class EnergyBall extends AbstractBallRelic implements ClickableRelic, Sta
     private static final String NAME = EnergyBall.class.getSimpleName();
     public static final String RELIC_ID = BallsInitializer.makeID(NAME);
 
-    private boolean used = false;
-
     public EnergyBall() {
         super(RELIC_ID, NAME, RelicTier.RARE, LandingSound.MAGICAL);
         BaseMod.subscribe(this);
@@ -22,7 +20,7 @@ public class EnergyBall extends AbstractBallRelic implements ClickableRelic, Sta
 
     @Override
     public void atBattleStart() {
-        if (!this.used) {
+        if (!this.grayscale) {
             this.beginLongPulse();
         }
     }
@@ -34,8 +32,7 @@ public class EnergyBall extends AbstractBallRelic implements ClickableRelic, Sta
 
     @Override
     public void onRightClick() {
-        if (!this.used && !AbstractDungeon.getMonsters().areMonstersBasicallyDead() && !AbstractDungeon.getCurrRoom().isBattleOver) {
-            this.used = true;
+        if (!this.grayscale && !AbstractDungeon.getMonsters().areMonstersBasicallyDead() && !AbstractDungeon.getCurrRoom().isBattleOver) {
             this.grayscale = true;
             this.flash();
             this.stopPulse();
@@ -45,7 +42,6 @@ public class EnergyBall extends AbstractBallRelic implements ClickableRelic, Sta
 
     @Override
     public void receiveStartAct() {
-        this.used = false;
         this.grayscale = false;
     }
 }

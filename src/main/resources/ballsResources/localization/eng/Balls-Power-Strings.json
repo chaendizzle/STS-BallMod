@@ -1,4 +1,20 @@
 {
+    "balls:BowlingBall": {
+        "NAME": "Bowling Ball",
+        "DESCRIPTIONS": ["Double the damage of your next attack."]
+    },
+    "balls:CricketBall": {
+        "NAME": "Cricket Ball",
+        "DESCRIPTIONS": ["Double the damage of your next attack."]
+    },
+    "balls:Dodgeball": {
+        "NAME": "Dodgeball",
+        "DESCRIPTIONS": ["Prevent the next time you take damage. Removes itself at the start of your next turn."]
+    },
+    "balls:PaddleBall": {
+        "NAME": "Paddle Ball",
+        "DESCRIPTIONS": ["The first attack you receive each combat is reflected back onto the attacking enemy."]
+    },
     "balls:TakeDamageNextTurn": {
         "NAME": "Take Damage Next Turn",
         "DESCRIPTIONS": ["At the start of this enemy's turn, this enemy will take #b", " damage."]

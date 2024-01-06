@@ -35,7 +35,7 @@ public class RubberBouncyBall extends AbstractBallRelic implements ClickableReli
             this.used = true;
             this.flash();
             this.stopPulse();
-            addToBot(new DamageRandomEnemyAction(new DamageInfo(AbstractDungeon.player, 2), AttackEffect.SLASH_DIAGONAL));
+            addToBot(new DamageRandomEnemyAction(new DamageInfo(AbstractDungeon.player, 7), AttackEffect.SLASH_DIAGONAL));
         }
     }
 }

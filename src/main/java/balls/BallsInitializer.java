@@ -3,6 +3,7 @@ package balls;
 import basemod.BaseMod;
 import basemod.ModLabeledToggleButton;
 import basemod.ModPanel;
+import basemod.abstracts.CustomSavableRaw;
 import basemod.helpers.RelicType;
 import basemod.interfaces.EditRelicsSubscriber;
 import basemod.interfaces.EditStringsSubscriber;
@@ -18,15 +19,17 @@ import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 import com.evacipated.cardcrawl.modthespire.lib.SpireConfig;
 import com.evacipated.cardcrawl.modthespire.lib.SpireInitializer;
 import com.google.gson.Gson;
+import com.google.gson.JsonElement;
+import com.google.gson.JsonParser;
 import com.megacrit.cardcrawl.actions.animations.TalkAction;
 import com.megacrit.cardcrawl.core.Settings;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
-import com.megacrit.cardcrawl.events.beyond.MysteriousSphere;
 import com.megacrit.cardcrawl.helpers.FontHelper;
 import com.megacrit.cardcrawl.localization.PowerStrings;
 import com.megacrit.cardcrawl.localization.RelicStrings;
 import com.megacrit.cardcrawl.localization.UIStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
+import com.megacrit.cardcrawl.monsters.city.SphericGuardian;
 import com.megacrit.cardcrawl.relics.AbstractRelic;
 import com.megacrit.cardcrawl.rooms.AbstractRoom;
 import balls.helpers.ComplimentHelper;
@@ -211,6 +214,98 @@ public class BallsInitializer implements
         BaseMod.registerModBadge(badgeTexture, MODNAME, AUTHOR, DESCRIPTION, settingsPanel);
 
         logger.info("Done loading badge Image and mod options");
+
+        // =============== SAVE FIELDS ===================
+        logger.info("Adding save fields");
+        BaseMod.addSaveField("perActRelics", new CustomSavableRaw() {
+            @Override
+            public void onLoadRaw(JsonElement json) {
+                if (AbstractDungeon.player != null) {
+                    if (json != null) {
+                        if (AbstractDungeon.player.hasRelic(BowlingBall.RELIC_ID)) {
+                            JsonElement bowlingBallActive = json.getAsJsonObject().get("bowlingBallActive");
+                            BowlingBall bowlingBall = ((BowlingBall)AbstractDungeon.player.getRelic(BowlingBall.RELIC_ID));
+                            bowlingBall.doubleDamage = bowlingBallActive.getAsBoolean();
+                        }
+                        if (AbstractDungeon.player.hasRelic(DragonBall.RELIC_ID)) {
+                            JsonElement dragonBallUsed = json.getAsJsonObject().get("dragonBallUsed");
+                            DragonBall dragonBall = ((DragonBall)AbstractDungeon.player.getRelic(DragonBall.RELIC_ID));
+                            dragonBall.grayscale = dragonBallUsed.getAsBoolean();
+                        }
+                        if (AbstractDungeon.player.hasRelic(EnergyBall.RELIC_ID)) {
+                            JsonElement energyBallUsed = json.getAsJsonObject().get("energyBallUsed");
+                            EnergyBall energyBall = ((EnergyBall)AbstractDungeon.player.getRelic(EnergyBall.RELIC_ID));
+                            energyBall.grayscale = energyBallUsed.getAsBoolean();
+                        }
+                        if (AbstractDungeon.player.hasRelic(Eyeball.RELIC_ID)) {
+                            JsonElement eyeballUsed = json.getAsJsonObject().get("eyeballUsed");
+                            Eyeball eyeball = ((Eyeball)AbstractDungeon.player.getRelic(Eyeball.RELIC_ID));
+                            eyeball.grayscale = eyeballUsed.getAsBoolean();
+                        }
+                        if (AbstractDungeon.player.hasRelic(RubberBandBall.RELIC_ID)) {
+                            JsonElement rubberBandBallUsed = json.getAsJsonObject().get("rubberBandBallUsed");
+                            RubberBandBall rubberBandBall = ((RubberBandBall)AbstractDungeon.player.getRelic(RubberBandBall.RELIC_ID));
+                            rubberBandBall.grayscale = rubberBandBallUsed.getAsBoolean();
+                        }
+                        if (AbstractDungeon.player.hasRelic(TennisBall.RELIC_ID)) {
+                            JsonElement tennisBallUsed = json.getAsJsonObject().get("tennisBallUsed");
+                            TennisBall tennisBall = ((TennisBall)AbstractDungeon.player.getRelic(TennisBall.RELIC_ID));
+                            tennisBall.grayscale = tennisBallUsed.getAsBoolean();
+                        }
+                    }
+                }
+            }
+
+            @Override
+            public JsonElement onSaveRaw() {
+                JsonParser parser = new JsonParser();
+                boolean bowlingBallActive = false;
+                boolean dragonBallUsed = false;
+                boolean energyBallUsed = false;
+                boolean eyeballUsed = false;
+                boolean rubberBandBallUsed = false;
+                boolean tennisBallUsed = false;
+
+                if(AbstractDungeon.player != null) {
+                    if (AbstractDungeon.player.hasRelic(BowlingBall.RELIC_ID)) {
+                        bowlingBallActive = ((BowlingBall)AbstractDungeon.player.getRelic(BowlingBall.RELIC_ID)).doubleDamage;
+                    }
+                    if (AbstractDungeon.player.hasRelic(DragonBall.RELIC_ID)) {
+                        dragonBallUsed = ((DragonBall)AbstractDungeon.player.getRelic(DragonBall.RELIC_ID)).grayscale;
+                    }
+                    if (AbstractDungeon.player.hasRelic(EnergyBall.RELIC_ID)) {
+                        energyBallUsed = ((EnergyBall)AbstractDungeon.player.getRelic(EnergyBall.RELIC_ID)).grayscale;
+                    }
+                    if (AbstractDungeon.player.hasRelic(EnergyBall.RELIC_ID)) {
+                        eyeballUsed = ((Eyeball)AbstractDungeon.player.getRelic(Eyeball.RELIC_ID)).grayscale;
+                    }
+                    if (AbstractDungeon.player.hasRelic(RubberBandBall.RELIC_ID)) {
+                        rubberBandBallUsed = ((RubberBandBall)AbstractDungeon.player.getRelic(RubberBandBall.RELIC_ID)).grayscale;
+                    }
+                    if (AbstractDungeon.player.hasRelic(TennisBall.RELIC_ID)) {
+                        tennisBallUsed = ((TennisBall)AbstractDungeon.player.getRelic(TennisBall.RELIC_ID)).grayscale;
+                    }
+                }
+
+                return parser.parse(
+                    "{\"bowlingBallActive\":\""
+                    + bowlingBallActive
+                    + "\",\"dragonBallUsed\":\""
+                    + dragonBallUsed
+                    + "\",\"energyBallUsed\":\""
+                    + energyBallUsed
+                    + "\",\"eyeballUsed\":\""
+                    + eyeballUsed
+                    + "\",\"rubberBandBallUsed\":\""
+                    + rubberBandBallUsed
+                    + "\",\"tennisBallUsed\":\""
+                    + tennisBallUsed
+                    + "\"}"
+                );
+            }
+        });
+        // =============== /SAVE FIELDS/ ===================
+
     }
 
     // =============== /POST-INITIALIZE/ =================
@@ -328,21 +423,27 @@ public class BallsInitializer implements
     public void receiveOnBattleStart(AbstractRoom room) {
         if (disableBallCompliments)
             return;
-        for (AbstractRelic relic : AbstractDungeon.player.relics) {
-            if (relic instanceof AbstractBallRelic) {
-                for (AbstractMonster monster : room.monsters.monsters) {
-                    String compliment = "";
-                    if (monster.id.equals(MysteriousSphere.ID)) {
-                        compliment = ComplimentHelper.getMysteriousSpherePhrase();
-                    } else if (AbstractDungeon.player.hasRelic(Eyeball.RELIC_ID) && AbstractDungeon.miscRng.random(1, 10) == 1) {
-                        compliment = ComplimentHelper.getEyeballPhrase();
-                    } else {
-                        compliment = ComplimentHelper.getCompliment();
-                    }
-                    AbstractDungeon.actionManager.addToBottom(
-                        new TalkAction(monster, compliment, 3.0F, 3.0F));
+        int ballCount = 0;
+        for (AbstractRelic relic : AbstractDungeon.player.relics)
+            if (relic instanceof AbstractBallRelic)
+                ballCount++;
+        if (ballCount > 0) {
+            for (AbstractMonster monster : room.monsters.monsters) {
+                String compliment = "";
+
+                if (monster.id.equals(SphericGuardian.ID)) {
+                    compliment = ComplimentHelper.getSphericGuardianPhrase();
+                } else if (ballCount == 1) {
+                    compliment = ComplimentHelper.getInsult();
+                } else if (AbstractDungeon.player.hasRelic(Eyeball.RELIC_ID) && AbstractDungeon.miscRng.random(1, 5) == 1) {
+                    compliment = ComplimentHelper.getEyeballPhrase();
+                } else if (AbstractDungeon.player.hasRelic(EnergyBall.RELIC_ID) && AbstractDungeon.miscRng.random(1, 5) == 1) {
+                    compliment = ComplimentHelper.getEnergyBallPhrase();
+                } else {
+                    compliment = ComplimentHelper.getCompliment();
                 }
-                break;
+                AbstractDungeon.actionManager.addToBottom(
+                    new TalkAction(monster, compliment, 3.0F, 3.0F));
             }
         }
     }

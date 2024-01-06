@@ -20,7 +20,8 @@ public class Baseball extends AbstractBallRelic {
 
     @Override
     public void atBattleStart() {
-        addToBot(new ApplyPowerAction(AbstractDungeon.player, AbstractDungeon.player, new StrengthPower(AbstractDungeon.player, this.counter), this.counter));
+        if (this.counter > 0)
+            addToBot(new ApplyPowerAction(AbstractDungeon.player, AbstractDungeon.player, new StrengthPower(AbstractDungeon.player, this.counter), this.counter));
     }
 
     @Override
@@ -34,6 +35,9 @@ public class Baseball extends AbstractBallRelic {
     public String getUpdatedDescription() {
         if (relicStrings == null)
             relicStrings = CardCrawlGame.languagePack.getRelicStrings(relicId);
-        return relicStrings.DESCRIPTIONS[0] + this.counter + relicStrings.DESCRIPTIONS[1];
+        int val = this.counter;
+        if (val < 0)
+            val = 0;
+        return relicStrings.DESCRIPTIONS[0] + val + relicStrings.DESCRIPTIONS[1];
     }
 }

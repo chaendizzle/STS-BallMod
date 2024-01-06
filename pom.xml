@@ -5,10 +5,10 @@
 
     <groupId>balls</groupId>
     <artifactId>balls</artifactId>
-    <version>1.1.1</version>
+    <version>1.2.2</version>
     <packaging>jar</packaging>
     <name>Balls</name>
-    <description>Blank Slate for STS Modding</description>
+    <description>Adds Balls to the game</description>
 
     <dependencies>
         <dependency>
@@ -85,7 +85,8 @@
                         <phase>package</phase>
                         <configuration>
                             <target>
-                                <copy file="target/Balls.jar" tofile="../_ModTheSpire/mods/Balls.jar"/>
+                                <copy file="target/Balls.jar" tofile="/home/dandy/.steam/steam/steamapps/common/SlayTheSpire/mods/Balls.jar"/>
+                                <copy file="target/Balls.jar" tofile="/home/dandy/repos/sts/sts-uploads/Balls/content/Balls.jar"/>
                             </target>
                         </configuration>
                         <goals>

@@ -26,7 +26,7 @@ public class Hairball extends AbstractBallRelic {
     }
 
     @Override
-    public void atTurnStartPostDraw() {
+    public void atBattleStart() {
         if (AbstractDungeon.relicRng.randomBoolean()) {
             this.flash();
             this.counter++;

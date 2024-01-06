@@ -9,6 +9,7 @@ import com.megacrit.cardcrawl.cards.optionCards.BecomeAlmighty;
 import com.megacrit.cardcrawl.cards.optionCards.FameAndFortune;
 import com.megacrit.cardcrawl.cards.optionCards.LiveForever;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
+import com.megacrit.cardcrawl.rooms.MonsterRoom;
 
 import balls.BallsInitializer;
 import basemod.BaseMod;
@@ -19,8 +20,6 @@ public class DragonBall extends AbstractBallRelic implements ClickableRelic, Sta
     private static final String NAME = DragonBall.class.getSimpleName();
     public static final String RELIC_ID = BallsInitializer.makeID(NAME);
 
-    private boolean used = false;
-
     public DragonBall() {
         super(RELIC_ID, NAME, RelicTier.UNCOMMON, LandingSound.FLAT);
         BaseMod.subscribe(this);
@@ -28,7 +27,7 @@ public class DragonBall extends AbstractBallRelic implements ClickableRelic, Sta
 
     @Override
     public void atBattleStart() {
-        if (!this.used) {
+        if (!this.grayscale) {
             this.beginLongPulse();
         }
     }
@@ -40,11 +39,10 @@ public class DragonBall extends AbstractBallRelic implements ClickableRelic, Sta
 
     @Override
     public void onRightClick() {
-        if (!AbstractDungeon.getCurrRoom().isBattleOver && !this.used) {
+        if (AbstractDungeon.getCurrRoom() instanceof MonsterRoom && !AbstractDungeon.getCurrRoom().isBattleOver && !this.grayscale) {
             this.flash();
             this.stopPulse();
             this.grayscale = true;
-            this.used = true;
             ArrayList<AbstractCard> wishes = new ArrayList<>();
             wishes.add(new BecomeAlmighty());
             wishes.add(new FameAndFortune());
@@ -57,7 +55,6 @@ public class DragonBall extends AbstractBallRelic implements ClickableRelic, Sta
 
     @Override
     public void receiveStartAct() {
-        this.used = false;
         this.grayscale = false;
     }
 }

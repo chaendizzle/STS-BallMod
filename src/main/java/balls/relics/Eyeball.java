@@ -13,8 +13,6 @@ public class Eyeball extends AbstractBallRelic implements ClickableRelic, StartA
     private static final String NAME = Eyeball.class.getSimpleName();
     public static final String RELIC_ID = BallsInitializer.makeID(NAME);
 
-    private boolean used = false;
-
     public Eyeball() {
         super(RELIC_ID, NAME, AbstractRelic.RelicTier.RARE, AbstractRelic.LandingSound.FLAT);
         BaseMod.subscribe(this);
@@ -22,7 +20,7 @@ public class Eyeball extends AbstractBallRelic implements ClickableRelic, StartA
 
     @Override
     public void atBattleStart() {
-        if (!this.used) {
+        if (!this.grayscale) {
             this.beginLongPulse();
         }
     }
@@ -34,14 +32,12 @@ public class Eyeball extends AbstractBallRelic implements ClickableRelic, StartA
 
     @Override
     public void receiveStartAct() {
-        this.used = false;
         this.grayscale = false;
     }
 
     @Override
     public void onRightClick() {
-        if (!this.used) {
-            this.used = true;
+        if (!this.grayscale) {
             this.grayscale = true;
             this.flash();
             this.stopPulse();

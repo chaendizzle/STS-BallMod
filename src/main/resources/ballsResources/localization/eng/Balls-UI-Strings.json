@@ -1,4 +1,13 @@
 {
+    "balls:Insults": {
+        "TEXT": [
+            "Wow... only 1...?",
+            "LOL one-ball wonder",
+            "that's it...?",
+            "I expected more than that...",
+            "I hope the size increases, this is sad"
+        ]
+    },
     "balls:ComplimentHelper": {
         "TEXT": [
             "Nice balls!",
@@ -8,57 +17,22 @@
             "So round, so perfect",
             "Such a dazzling array of balls you have there!",
             "Incredible, those balls are truly one-of-a-kind!",
-            "Never have I seen balls so unique and vibrant.",
             "The diversity of these balls is simply astounding!",
             "My, what a fascinating assortment of balls!",
-            "Astonishing! Each ball is a masterpiece in its own right.",
-            "I’m taken aback by the exquisite nature of these balls!",
-            "Wow, each ball radiates with such distinctive charm!",
             "The shape and texture of these balls are unparalleled!",
             "So smooth, so extraordinary!",
-            "If only I could have balls as splendid as these...",
-            "Those are some exquisite balls; I've never seen anything like them!",
-            "The elegance of these balls is just breath-taking!",
-            "Such a remarkable compilation of balls, each telling its own story!",
-            "The craftsmanship of these balls is beyond compare!",
-            "So many balls, each a marvel of its own!",
-            "Oh, the symmetry of these balls is simplymesmerizing!",
-            "How do you get your balls to be so impeccably well-formed?",
-            "I can't get over the uniqueness of each individual ball!",
-            "These balls are an eclectic mix of wonder and amazement!",
+            "Those are some exquisite balls!",
             "If I had balls like those, I’d be the talk of the Spire!",
-            "Incredible balls, how do you get them so perfect?!",
-            "Wow! How can balls be this flawless?!",
-            "Such impeccable balls, what’s your secret?!",
-            "Astonishing! How do you manage to get your balls so well-formed?!",
-            "Amazing! How are your balls a masterpiece every time?!",
-            "Unbelievable! How can balls be this symmetrical?!",
-            "Stunning balls! How do you achieve such excellence?!",
-            "Remarkable! How do you craft balls to such perfection?!",
-            "Fantastic balls! What’s the technique behind their brilliance?!",
-            "Breathtaking! How are your balls so uniquely spectacular?!",
             "How are your balls so flawless?",
             "What’s the secret to such perfect spheres?",
-            "How are each of your balls so unique?",
-            "What makes your balls so symmetrical?",
-            "How’d you get those balls so impeccably shaped?",
-            "What’s the technique behind such perfect balls?",
-            "How are those balls so meticulously crafted?",
-            "What’s the method for such extraordinary balls?",
-            "How’d you achieve such ball perfection?",
-            "What makes every ball a masterpiece?",
-            "Ugh, only you would have balls so infuriatingly charming!",
-            "These balls are as exasperating as they are delightful!",
-            "Annoyingly captivating balls you have there!",
-            "It’s maddening how enchanting your balls are!",
-            "How can balls be so vexing yet so captivating?!"
+            "What makes your balls so symmetrical?"
         ]
     },
     "balls:SpecialInteractions": {
         "TEXT": [
             "Please don't hurt my family...",
             "Did one of your balls just wink at me?",
-            "Did your balls have their morning coffee? They're bouncing with energy!"
+            "Your balls are bouncing with energy!"
         ]
     }
 }

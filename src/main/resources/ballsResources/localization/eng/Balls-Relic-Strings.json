@@ -24,7 +24,7 @@
         "NAME": "Basketball",
         "FLAVOR": "TODO",
         "DESCRIPTIONS": [
-            "Whenever you play cards of the same type back-to-back, gain #b1 block."
+            "Whenever you play cards of the same card type back-to-back, gain #b1 block."
         ]
     },
     "balls:BeachBall": {
@@ -63,7 +63,7 @@
         "NAME": "Cheese Ball",
         "FLAVOR": "TODO",
         "DESCRIPTIONS": [
-            "Whenever you heal HP, heal 2 extra HP."
+            "Heal for half of your max health. Whenever you heal HP, heal 2 extra HP."
         ]
     },
     "balls:Cottonball": {
@@ -175,7 +175,7 @@
         "NAME": "Handball",
         "FLAVOR": "TODO",
         "DESCRIPTIONS": [
-            "Whenever you attack an enemy, deal #b2 damage to a random monster."
+            "Whenever you attack an enemy, deal #b2 additional damage to a random monster."
         ]
     },
     "balls:Kickball": {
@@ -224,21 +224,21 @@
         "NAME": "Paddle Ball",
         "FLAVOR": "TODO",
         "DESCRIPTIONS": [
-            "The first attack you receive each combat is reflected back onto a random enemy."
+            "The first attack you receive each combat is reflected back onto the attacking enemy."
         ]
     },
     "balls:Pinball": {
         "NAME": "Pinball",
         "FLAVOR": "TODO",
         "DESCRIPTIONS": [
-            "Every time you attack an enemy consecutively, increase the damage dealt by #b2."
+            "Every time you alternate attacks between different enemies, increase the damage dealt by #b2."
         ]
     },
     "balls:PingPongBall": {
         "NAME": "Ping Pong Ball",
         "FLAVOR": "TODO",
         "DESCRIPTIONS": [
-            "Every time you alternate attacks between different enemies, increase the damage dealt by #b2."
+            "Every time you attack an enemy consecutively, increase the damage dealt by #b2."
         ]
     },
     "balls:Pokeball": {
@@ -272,7 +272,7 @@
         "NAME": "Rubber Bouncy Ball",
         "FLAVOR": "TODO",
         "DESCRIPTIONS": [
-            "[#2aecd7]Once [#2aecd7]per [#2aecd7]turn.[] Right-click to deal #b2 damage to a random enemy."
+            "[#2aecd7]Once [#2aecd7]per [#2aecd7]turn.[] Right-click to deal #b7 damage to a random enemy."
         ]
     },
     "balls:SoccerBall": {
@@ -333,7 +333,7 @@
         "NAME": "Wrecking Ball",
         "FLAVOR": "TODO",
         "DESCRIPTIONS": [
-            "At the start of combat, deal between #b5 and #b10 damage to each enemy."
+            "At the start of combat, deal between #b5 and #b10 damage to each enemy, ignoring block."
         ]
     },
     "balls:YogaBall": {

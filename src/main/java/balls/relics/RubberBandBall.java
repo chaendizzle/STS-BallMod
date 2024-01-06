@@ -29,6 +29,7 @@ public class RubberBandBall extends AbstractBallRelic implements ClickableRelic 
     @Override
     public void onRightClick() {
         addToBot(new DamageAllEnemiesAction(AbstractDungeon.player, 5 * this.counter, DamageType.NORMAL, AttackEffect.SLASH_DIAGONAL));
+        grayscale = true;
         this.flash();
         this.usedUp();
     }
