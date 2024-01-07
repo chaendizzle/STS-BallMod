@@ -1,11 +1,13 @@
 {
     "balls:Insults": {
         "TEXT": [
-            "Wow... only 1...?",
+            "Wow... only one...?",
             "LOL one-ball wonder",
-            "that's it...?",
+            "That's it...?",
             "I expected more than that...",
-            "I hope the size increases, this is sad"
+            "So small, this is sad",
+            "Gross",
+            "Put that thing away!"
         ]
     },
     "balls:ComplimentHelper": {
