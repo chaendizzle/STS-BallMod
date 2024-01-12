@@ -8,10 +8,9 @@ import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.cards.optionCards.BecomeAlmighty;
 import com.megacrit.cardcrawl.cards.optionCards.FameAndFortune;
 import com.megacrit.cardcrawl.cards.optionCards.LiveForever;
-import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
-import com.megacrit.cardcrawl.rooms.MonsterRoom;
 
 import balls.BallsInitializer;
+import balls.helpers.CombatHelper;
 import basemod.BaseMod;
 import basemod.interfaces.StartActSubscriber;
 
@@ -39,7 +38,7 @@ public class DragonBall extends AbstractBallRelic implements ClickableRelic, Sta
 
     @Override
     public void onRightClick() {
-        if (AbstractDungeon.getCurrRoom() instanceof MonsterRoom && !AbstractDungeon.getCurrRoom().isBattleOver && !this.grayscale) {
+        if (CombatHelper.isInCombat() && !this.grayscale) {
             this.flash();
             this.stopPulse();
             this.grayscale = true;

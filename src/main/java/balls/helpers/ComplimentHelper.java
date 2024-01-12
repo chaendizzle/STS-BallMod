@@ -35,4 +35,10 @@ public class ComplimentHelper {
     public static String getEnergyBallPhrase() {
         return SPECIAL_TEXT[2];
     }
+
+    public static String getBrucePhrase() {
+        int numPhrases = 2;
+        int idx = (int)(Math.random() * numPhrases) + 1 + numPhrases; // range: 3-4
+        return SPECIAL_TEXT[idx];
+    }
 }

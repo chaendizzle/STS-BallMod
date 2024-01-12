@@ -7,6 +7,8 @@ import com.megacrit.cardcrawl.cards.DamageInfo;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.relics.AbstractRelic;
 
+import balls.helpers.CombatHelper;
+
 public class RubberBouncyBall extends AbstractBallRelic implements ClickableRelic {
 
     private static final String NAME = RubberBouncyBall.class.getSimpleName();
@@ -31,7 +33,7 @@ public class RubberBouncyBall extends AbstractBallRelic implements ClickableReli
 
     @Override
     public void onRightClick() {
-        if (!this.used) {
+        if (!this.used && CombatHelper.isInCombat()) {
             this.used = true;
             this.flash();
             this.stopPulse();

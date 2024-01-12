@@ -1,0 +1,69 @@
+
+bruce.png
+size: 256,512
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+035
+  rotate: false
+  xy: 1, 165
+  size: 89, 80
+  orig: 112, 112
+  offset: 11, 17
+  index: -1
+033
+  rotate: false
+  xy: 92, 83
+  size: 89, 80
+  orig: 112, 112
+  offset: 11, 16
+  index: -1
+030
+  rotate: false
+  xy: 1, 83
+  size: 89, 80
+  orig: 112, 112
+  offset: 11, 16
+  index: -1
+028
+  rotate: false
+  xy: 94, 247
+  size: 90, 75
+  orig: 112, 112
+  offset: 10, 16
+  index: -1
+020
+  rotate: false
+  xy: 1, 247
+  size: 91, 76
+  orig: 112, 112
+  offset: 10, 12
+  index: -1
+015
+  rotate: false
+  xy: 94, 324
+  size: 90, 75
+  orig: 112, 112
+  offset: 10, 16
+  index: -1
+011
+  rotate: false
+  xy: 1, 1
+  size: 89, 80
+  orig: 112, 112
+  offset: 11, 16
+  index: -1
+005
+  rotate: false
+  xy: 92, 1
+  size: 89, 80
+  orig: 112, 112
+  offset: 11, 17
+  index: -1
+001
+  rotate: false
+  xy: 92, 165
+  size: 89, 80
+  orig: 112, 112
+  offset: 11, 17
+  index: -1

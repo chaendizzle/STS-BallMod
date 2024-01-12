@@ -6,6 +6,7 @@ import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.rooms.AbstractRoom;
 
 import balls.BallsInitializer;
+import balls.helpers.CombatHelper;
 
 public class TennisBall extends AbstractBallRelic implements ClickableRelic {
 
@@ -20,7 +21,7 @@ public class TennisBall extends AbstractBallRelic implements ClickableRelic {
 
     @Override
     public void onRightClick() {
-        if (!this.grayscale) {
+        if (!this.grayscale && CombatHelper.isInCombat() && this.counter > 0) {
             flash();
             usedUp();
             addToBot(new GainBlockAction(AbstractDungeon.player, AbstractDungeon.player, this.counter));

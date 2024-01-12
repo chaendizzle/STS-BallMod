@@ -7,6 +7,7 @@ import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.powers.VulnerablePower;
 
 import balls.BallsInitializer;
+import balls.helpers.CombatHelper;
 
 public class Marble extends AbstractBallRelic implements ClickableRelic {
 
@@ -21,7 +22,7 @@ public class Marble extends AbstractBallRelic implements ClickableRelic {
 
     @Override
     public void onRightClick() {
-        if (!this.used && !AbstractDungeon.getMonsters().areMonstersBasicallyDead() && !AbstractDungeon.getCurrRoom().isBattleOver) {
+        if (!this.used && CombatHelper.isInCombat()) {
             this.used = true;
             addToBot(new ApplyPowerToRandomEnemyAction(AbstractDungeon.player, new VulnerablePower(null, 1, false)));
             this.flash();

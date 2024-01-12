@@ -8,6 +8,8 @@ import com.megacrit.cardcrawl.relics.AbstractRelic;
 import com.megacrit.cardcrawl.stances.CalmStance;
 import com.megacrit.cardcrawl.stances.WrathStance;
 
+import balls.helpers.CombatHelper;
+
 public class WaterPoloBall extends AbstractBallRelic implements ClickableRelic {
 
     private static final String NAME = WaterPoloBall.class.getSimpleName();
@@ -32,7 +34,7 @@ public class WaterPoloBall extends AbstractBallRelic implements ClickableRelic {
 
     @Override
     public void onRightClick() {
-        if (!used) {
+        if (!this.used && CombatHelper.isInCombat()) {
             if (AbstractDungeon.player.stance.ID.equals(CalmStance.STANCE_ID)) {
                 addToBot(new ChangeStanceAction(WrathStance.STANCE_ID));
             } else {

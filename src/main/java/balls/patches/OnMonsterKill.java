@@ -10,15 +10,16 @@ import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.relics.AbstractRelic;
 
 import balls.relics.Baseball;
+import balls.relics.BruceAvocadoLittleLeviathanSouleater;
 import javassist.CtBehavior;
 
-public class ExactLethal {
+public class OnMonsterKill {
 
     @SpirePatch2(
         clz = AbstractMonster.class,
         method = "damage"
     )
-    public static class ExactLethalPatch {
+    public static class OnMonsterKillPatch {
         @SpireInsertPatch(
             locator = Locator.class,
             localvars = {"damageAmount"}
@@ -30,6 +31,13 @@ public class ExactLethal {
                     for (AbstractRelic relic : AbstractDungeon.player.relics) {
                         if (relic.relicId.equals(Baseball.RELIC_ID)) {
                             relic.onTrigger();
+                        }
+                    }
+                } else if (currentHealth < 0) {
+                    for (AbstractRelic relic : AbstractDungeon.player.relics) {
+                        if (relic.relicId.equals(BruceAvocadoLittleLeviathanSouleater.RELIC_ID)) {
+                            relic.counter += Math.abs(currentHealth);
+                            relic.flash();
                         }
                     }
                 }

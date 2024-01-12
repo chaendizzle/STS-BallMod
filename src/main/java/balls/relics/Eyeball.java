@@ -5,6 +5,7 @@ import com.megacrit.cardcrawl.actions.watcher.OmniscienceAction;
 import com.megacrit.cardcrawl.relics.AbstractRelic;
 
 import balls.BallsInitializer;
+import balls.helpers.CombatHelper;
 import basemod.BaseMod;
 import basemod.interfaces.StartActSubscriber;
 
@@ -37,7 +38,7 @@ public class Eyeball extends AbstractBallRelic implements ClickableRelic, StartA
 
     @Override
     public void onRightClick() {
-        if (!this.grayscale) {
+        if (!this.grayscale && CombatHelper.isInCombat()) {
             this.grayscale = true;
             this.flash();
             this.stopPulse();

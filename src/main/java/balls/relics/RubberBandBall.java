@@ -8,6 +8,7 @@ import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.relics.AbstractRelic;
 
 import balls.BallsInitializer;
+import balls.helpers.CombatHelper;
 
 public class RubberBandBall extends AbstractBallRelic implements ClickableRelic {
 
@@ -28,9 +29,11 @@ public class RubberBandBall extends AbstractBallRelic implements ClickableRelic 
 
     @Override
     public void onRightClick() {
-        addToBot(new DamageAllEnemiesAction(AbstractDungeon.player, 5 * this.counter, DamageType.NORMAL, AttackEffect.SLASH_DIAGONAL));
-        grayscale = true;
-        this.flash();
-        this.usedUp();
+        if (!this.grayscale && CombatHelper.isInCombat() && this.counter > 0) {
+            addToBot(new DamageAllEnemiesAction(AbstractDungeon.player, 5 * this.counter, DamageType.NORMAL, AttackEffect.SLASH_DIAGONAL));
+            grayscale = true;
+            this.flash();
+            this.usedUp();
+        }
     }
 }

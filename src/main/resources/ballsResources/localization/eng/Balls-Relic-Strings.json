@@ -40,6 +40,13 @@
         "DESCRIPTIONS": [
         ]
     },
+    "balls:BruceAvocadoLittleLeviathanSouleater": {
+        "NAME": "Bruce Avocado Little Leviathan Souleater",
+        "FLAVOR": "An elite specimen of unparalleled power. His owner is stinky.",
+        "DESCRIPTIONS": [
+            "On overkill, store excess damage done to enemy. Right-click to use. Reset the counter and gain block equal to the counter."
+        ]
+    },
     "balls:BowlingBall": {
         "NAME": "Bowling Ball",
         "FLAVOR": "TODO",

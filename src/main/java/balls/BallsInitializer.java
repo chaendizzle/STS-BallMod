@@ -367,6 +367,7 @@ public class BallsInitializer implements
         BaseMod.addRelic(new BeachBall(), RelicType.SHARED);
         // BaseMod.addRelic(new BingoBall(), RelicType.SHARED);
         BaseMod.addRelic(new BowlingBall(), RelicType.SHARED);
+        BaseMod.addRelic(new BruceAvocadoLittleLeviathanSouleater(), RelicType.SHARED);
         // BaseMod.addRelic(new Butterball(), RelicType.SHARED);
         // BaseMod.addRelic(new Cannonball(), RelicType.SHARED);
         BaseMod.addRelic(new CheeseBall(), RelicType.SHARED);
@@ -433,8 +434,10 @@ public class BallsInitializer implements
 
                 if (monster.id.equals(SphericGuardian.ID)) {
                     compliment = ComplimentHelper.getSphericGuardianPhrase();
-                } else if (ballCount == 1) {
+                } else if (ballCount == 1 && !AbstractDungeon.player.hasRelic(BruceAvocadoLittleLeviathanSouleater.RELIC_ID)) {
                     compliment = ComplimentHelper.getInsult();
+                } else if (AbstractDungeon.player.hasRelic(BruceAvocadoLittleLeviathanSouleater.RELIC_ID) && AbstractDungeon.miscRng.random(1, 5) == 1) {
+                    compliment = ComplimentHelper.getBrucePhrase();
                 } else if (AbstractDungeon.player.hasRelic(Eyeball.RELIC_ID) && AbstractDungeon.miscRng.random(1, 5) == 1) {
                     compliment = ComplimentHelper.getEyeballPhrase();
                 } else if (AbstractDungeon.player.hasRelic(EnergyBall.RELIC_ID) && AbstractDungeon.miscRng.random(1, 5) == 1) {

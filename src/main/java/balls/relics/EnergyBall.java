@@ -2,9 +2,9 @@ package balls.relics;
 
 import com.evacipated.cardcrawl.mod.stslib.relics.ClickableRelic;
 import com.megacrit.cardcrawl.actions.common.GainEnergyAction;
-import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 
 import balls.BallsInitializer;
+import balls.helpers.CombatHelper;
 import basemod.BaseMod;
 import basemod.interfaces.StartActSubscriber;
 
@@ -32,7 +32,7 @@ public class EnergyBall extends AbstractBallRelic implements ClickableRelic, Sta
 
     @Override
     public void onRightClick() {
-        if (!this.grayscale && !AbstractDungeon.getMonsters().areMonstersBasicallyDead() && !AbstractDungeon.getCurrRoom().isBattleOver) {
+        if (!this.grayscale && CombatHelper.isInCombat()) {
             this.grayscale = true;
             this.flash();
             this.stopPulse();

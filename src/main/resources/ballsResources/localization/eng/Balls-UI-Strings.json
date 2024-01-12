@@ -7,7 +7,8 @@
             "I expected more than that...",
             "So small, this is sad",
             "Gross",
-            "Put that thing away!"
+            "Put that thing away!",
+            "That just looks unnatural"
         ]
     },
     "balls:ComplimentHelper": {
@@ -18,23 +19,23 @@
             "I wish I had balls like that...",
             "So round, so perfect",
             "Such a dazzling array of balls you have there!",
-            "Incredible, those balls are truly one-of-a-kind!",
-            "The diversity of these balls is simply astounding!",
             "My, what a fascinating assortment of balls!",
-            "The shape and texture of these balls are unparalleled!",
+            "The shape and texture of these balls are amazing!",
             "So smooth, so extraordinary!",
             "Those are some exquisite balls!",
             "If I had balls like those, I’d be the talk of the Spire!",
             "How are your balls so flawless?",
             "What’s the secret to such perfect spheres?",
-            "What makes your balls so symmetrical?"
+            "Daaaaaannnnng, Donu's got some competition"
         ]
     },
     "balls:SpecialInteractions": {
         "TEXT": [
             "Please don't hurt my family...",
             "Did one of your balls just wink at me?",
-            "Your balls are bouncing with energy!"
+            "Your balls are bouncing with energy!",
+            "BRUCE IS SO CUTE!!!!",
+            "LOOK AT HIM GO!!"
         ]
     }
 }
