@@ -276,7 +276,7 @@ public class BallsInitializer implements
                     if (AbstractDungeon.player.hasRelic(EnergyBall.RELIC_ID)) {
                         energyBallUsed = ((EnergyBall)AbstractDungeon.player.getRelic(EnergyBall.RELIC_ID)).grayscale;
                     }
-                    if (AbstractDungeon.player.hasRelic(EnergyBall.RELIC_ID)) {
+                    if (AbstractDungeon.player.hasRelic(Eyeball.RELIC_ID)) {
                         eyeballUsed = ((Eyeball)AbstractDungeon.player.getRelic(Eyeball.RELIC_ID)).grayscale;
                     }
                     if (AbstractDungeon.player.hasRelic(RubberBandBall.RELIC_ID)) {
