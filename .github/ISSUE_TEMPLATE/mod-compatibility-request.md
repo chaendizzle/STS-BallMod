@@ -1,6 +1,6 @@
 ---
 name: Mod Compatibility Request
-about: Describe this issue template's purpose here.
+about: Request that this mod be compatible with another mod
 title: ''
 labels: compatibility
 assignees: ''
