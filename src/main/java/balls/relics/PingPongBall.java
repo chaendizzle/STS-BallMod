@@ -1,8 +1,6 @@
 package balls.relics;
 
 import com.megacrit.cardcrawl.cards.AbstractCard;
-import com.megacrit.cardcrawl.cards.DamageInfo;
-import com.megacrit.cardcrawl.cards.DamageInfo.DamageType;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.relics.AbstractRelic;
 
@@ -28,13 +26,5 @@ public class PingPongBall extends AbstractBallRelic {
             this.flash();
         }
         lastMonster = m;
-    }
-
-    @Override
-    public int onAttackToChangeDamage(DamageInfo info, int damageAmount) {
-        if (info.type == DamageType.NORMAL) {
-            return damageAmount + this.counter;
-        }
-        return damageAmount;
     }
 }

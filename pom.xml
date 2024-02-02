@@ -5,7 +5,7 @@
 
     <groupId>balls</groupId>
     <artifactId>balls</artifactId>
-    <version>1.2.6</version>
+    <version>1.2.7</version>
     <packaging>jar</packaging>
     <name>Balls</name>
     <description>Adds Balls to the game</description>
@@ -28,14 +28,14 @@
         <dependency>
             <groupId>com.evacipated.cardcrawl</groupId>
             <artifactId>BaseMod</artifactId>
-            <version>5.48.0</version>
+            <version>5.53.1</version>
             <scope>system</scope>
             <systemPath>${basedir}/../lib/BaseMod.jar</systemPath>
         </dependency>
         <dependency>
             <groupId>com.evacipated.cardcrawl.mod</groupId>
             <artifactId>stslib</artifactId>
-            <version>2.6.1</version>
+            <version>2.11.0</version>
             <scope>system</scope>
             <systemPath>${basedir}/../lib/StSLib.jar</systemPath>
         </dependency>
