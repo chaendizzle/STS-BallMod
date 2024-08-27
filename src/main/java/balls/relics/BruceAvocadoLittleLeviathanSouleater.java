@@ -35,7 +35,7 @@ public class BruceAvocadoLittleLeviathanSouleater extends AbstractBallRelic impl
     private static SkeletonMeshRenderer sr = null;
 
     public BruceAvocadoLittleLeviathanSouleater() {
-        super(RELIC_ID, NAME, RelicTier.RARE, LandingSound.HEAVY);
+        super(RELIC_ID, NAME, RelicTier.UNCOMMON, LandingSound.HEAVY);
         counter = 0;
         if (animation == null) {
             animation = new SpineAnimation(

@@ -153,10 +153,10 @@ public class BallsInitializer implements
 
     //Used by @SpireInitializer
     public static void initialize(){
-        logger.info("========================= Initializing Balls. =========================");
+        logger.info("========================= Fondling Balls. =========================");
         //This creates an instance of our classes and gets our code going after BaseMod and ModTheSpire initialize.
         new BallsInitializer();
-        logger.info("========================= /Balls Initialized./ =========================");
+        logger.info("========================= /Balls Fondled./ =========================");
     }
 
     // ============== /SUBSCRIBE, INITIALIZE/ =================
@@ -191,25 +191,27 @@ public class BallsInitializer implements
                 e.printStackTrace();
             }
         });
-        ModLabeledToggleButton disablePreviewRelicsButton = new ModLabeledToggleButton("Disable Eight Ball & Crystal Ball",
-                350.0f, 650.0f, Settings.CREAM_COLOR, FontHelper.charDescFont,
-                disablePreviewRelics,
-                settingsPanel,
-                (label) -> {},
-                (button) -> {
 
-            disablePreviewRelics = button.enabled;
-            try {
-                SpireConfig config = new SpireConfig("balls", "ballsConfig", ballsProperties);
-                config.setBool(DISABLE_PREVIEW_RELICS, disablePreviewRelics);
-                config.save();
-            } catch (Exception e) {
-                e.printStackTrace();
-            }
-        });
+        // TODO: Commenting out because neither relic is functional at the moment
+        // ModLabeledToggleButton disablePreviewRelicsButton = new ModLabeledToggleButton("Disable Eight Ball & Crystal Ball",
+        //         350.0f, 650.0f, Settings.CREAM_COLOR, FontHelper.charDescFont,
+        //         disablePreviewRelics,
+        //         settingsPanel,
+        //         (label) -> {},
+        //         (button) -> {
+
+        //     disablePreviewRelics = button.enabled;
+        //     try {
+        //         SpireConfig config = new SpireConfig("balls", "ballsConfig", ballsProperties);
+        //         config.setBool(DISABLE_PREVIEW_RELICS, disablePreviewRelics);
+        //         config.save();
+        //     } catch (Exception e) {
+        //         e.printStackTrace();
+        //     }
+        // });
 
         settingsPanel.addUIElement(disableBallComplimentsButton);
-        settingsPanel.addUIElement(disablePreviewRelicsButton);
+        // settingsPanel.addUIElement(disablePreviewRelicsButton);
 
         BaseMod.registerModBadge(badgeTexture, MODNAME, AUTHOR, DESCRIPTION, settingsPanel);
 

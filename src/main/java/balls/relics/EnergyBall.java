@@ -14,7 +14,7 @@ public class EnergyBall extends AbstractBallRelic implements ClickableRelic, Sta
     public static final String RELIC_ID = BallsInitializer.makeID(NAME);
 
     public EnergyBall() {
-        super(RELIC_ID, NAME, RelicTier.RARE, LandingSound.MAGICAL);
+        super(RELIC_ID, NAME, RelicTier.UNCOMMON, LandingSound.MAGICAL);
         BaseMod.subscribe(this);
     }
 

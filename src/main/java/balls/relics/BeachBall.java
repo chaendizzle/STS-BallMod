@@ -19,12 +19,12 @@ public class BeachBall extends AbstractBallRelic {
     private boolean removed = false;
 
     public BeachBall() {
-        super(RELIC_ID, NAME, AbstractRelic.RelicTier.UNCOMMON, AbstractRelic.LandingSound.FLAT);
+        super(RELIC_ID, NAME, AbstractRelic.RelicTier.COMMON, AbstractRelic.LandingSound.FLAT);
     }
 
     @Override
     public void atBattleStart() {
-        addToBot(new ApplyPowerAction(AbstractDungeon.player, AbstractDungeon.player, new DexterityPower(AbstractDungeon.player, 2), 2));
+        addToBot(new ApplyPowerAction(AbstractDungeon.player, AbstractDungeon.player, new DexterityPower(AbstractDungeon.player, 3), 3));
         this.flash();
         this.beginLongPulse();
         this.powerPlayedThisTurn = false;
@@ -52,7 +52,7 @@ public class BeachBall extends AbstractBallRelic {
             this.grayscale = true;
             this.stopPulse();
             this.removed = true;
-            addToBot(new ReducePowerAction(AbstractDungeon.player, AbstractDungeon.player, DexterityPower.POWER_ID, 2));
+            addToBot(new ReducePowerAction(AbstractDungeon.player, AbstractDungeon.player, DexterityPower.POWER_ID, 3));
         }
     }
 }

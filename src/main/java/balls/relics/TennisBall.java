@@ -3,7 +3,6 @@ package balls.relics;
 import com.evacipated.cardcrawl.mod.stslib.relics.ClickableRelic;
 import com.megacrit.cardcrawl.actions.common.GainBlockAction;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
-import com.megacrit.cardcrawl.rooms.AbstractRoom;
 
 import balls.BallsInitializer;
 import balls.helpers.CombatHelper;
@@ -29,7 +28,7 @@ public class TennisBall extends AbstractBallRelic implements ClickableRelic {
     }
 
     @Override
-    public void onEnterRoom(AbstractRoom room) {
+    public void atTurnStart() {
         if (!this.grayscale) {
             this.counter++;
         }

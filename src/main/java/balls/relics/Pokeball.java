@@ -12,28 +12,22 @@ public class Pokeball extends AbstractBallRelic {
     public static final String RELIC_ID = BallsInitializer.makeID(NAME);
 
     public Pokeball() {
-        super(RELIC_ID, NAME, AbstractRelic.RelicTier.COMMON, AbstractRelic.LandingSound.MAGICAL);
-        this.counter = 0;
+        super(RELIC_ID, NAME, AbstractRelic.RelicTier.RARE, AbstractRelic.LandingSound.MAGICAL);
     }
 
     @Override
     public void onVictory() {
-        if (this.counter >= 1) {
-            this.counter = 0;
-            this.flash();
-            switch(AbstractDungeon.relicRng.random(0, 2)) {
-                case 0:
-                    AbstractDungeon.getCurrRoom().addGoldToRewards(25);
-                    break;
-                case 1:
-                    AbstractDungeon.getCurrRoom().addCardReward(new RewardItem());
-                    break;
-                case 2:
-                    AbstractDungeon.getCurrRoom().addPotionToRewards(AbstractDungeon.returnRandomPotion());
-                    break;
-            }
-        } else {
-            this.counter++;
+        this.flash();
+        switch (AbstractDungeon.relicRng.random(0, 2)) {
+            case 0:
+                AbstractDungeon.getCurrRoom().addGoldToRewards(30);
+                break;
+            case 1:
+                AbstractDungeon.getCurrRoom().addCardReward(new RewardItem());
+                break;
+            case 2:
+                AbstractDungeon.getCurrRoom().addPotionToRewards(AbstractDungeon.returnRandomPotion());
+                break;
         }
     }
 }

@@ -10,7 +10,7 @@ public class CheeseBall extends AbstractBallRelic {
     public static final String RELIC_ID = BallsInitializer.makeID(NAME);
 
     public CheeseBall() {
-        super(RELIC_ID, NAME, RelicTier.COMMON, LandingSound.FLAT);
+        super(RELIC_ID, NAME, RelicTier.UNCOMMON, LandingSound.FLAT);
     }
 
     @Override

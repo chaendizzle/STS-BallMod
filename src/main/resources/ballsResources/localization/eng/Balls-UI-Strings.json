@@ -8,7 +8,12 @@
             "So small, this is sad",
             "Gross",
             "Put that thing away!",
-            "That just looks unnatural"
+            "That just looks unnatural",
+            "You'll never bounce back",
+            "Put that thing away there are children here!",
+            "Have some decency!",
+            "One nut nobody",
+            ""
         ]
     },
     "balls:ComplimentHelper": {
@@ -26,7 +31,11 @@
             "If I had balls like those, I’d be the talk of the Spire!",
             "How are your balls so flawless?",
             "What’s the secret to such perfect spheres?",
-            "Daaaaaannnnng, Donu's got some competition"
+            "Daaaaaannnnng, Donu's got some competition",
+            "The wrinkles... <3",
+            "I'm having a ball to be honest",
+            "So great bouncing into you here :)",
+            "BALLS"
         ]
     },
     "balls:SpecialInteractions": {
@@ -35,7 +44,7 @@
             "Did one of your balls just wink at me?",
             "Your balls are bouncing with energy!",
             "BRUCE IS SO CUTE!!!!",
-            "LOOK AT HIM GO!!"
+            "LOOK AT BRUCE GO!!"
         ]
     }
 }

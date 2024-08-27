@@ -22,7 +22,7 @@ public class BowlingBall extends AbstractBallRelic implements OnAfterUseCardReli
     private int livingMonsters;
 
     public BowlingBall() {
-        super(RELIC_ID, NAME, AbstractRelic.RelicTier.UNCOMMON, AbstractRelic.LandingSound.FLAT);
+        super(RELIC_ID, NAME, AbstractRelic.RelicTier.COMMON, AbstractRelic.LandingSound.FLAT);
     }
 
     @Override

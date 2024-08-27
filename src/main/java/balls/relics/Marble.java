@@ -1,9 +1,10 @@
 package balls.relics;
 
 import com.evacipated.cardcrawl.mod.stslib.relics.ClickableRelic;
-import com.megacrit.cardcrawl.actions.common.ApplyPowerToRandomEnemyAction;
+import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
 import com.megacrit.cardcrawl.cards.AbstractCard.CardColor;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
+import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.powers.VulnerablePower;
 
 import balls.BallsInitializer;
@@ -24,7 +25,9 @@ public class Marble extends AbstractBallRelic implements ClickableRelic {
     public void onRightClick() {
         if (!this.used && CombatHelper.isInCombat()) {
             this.used = true;
-            addToBot(new ApplyPowerToRandomEnemyAction(AbstractDungeon.player, new VulnerablePower(null, 1, false)));
+            for (AbstractMonster monster : AbstractDungeon.getMonsters().monsters) {
+                addToBot(new ApplyPowerAction(monster, AbstractDungeon.player, new VulnerablePower(monster, 1, true), 1));
+            }
             this.flash();
             this.stopPulse();
         }

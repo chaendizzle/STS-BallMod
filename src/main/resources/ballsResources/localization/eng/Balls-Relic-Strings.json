@@ -13,6 +13,13 @@
             "On receiving a fatal blow, this relic instead negates the damage. You may do this #b3 times."
         ]
     },
+    "balls:BallSack": {
+        "NAME": "Ball Sack",
+        "FLAVOR": "Mods, twist his ball sack",
+        "DESCRIPTIONS": [
+            "On pickup, add 1 common, 1 uncommon, and 1 rare #pBalls relic. Obtain #rTesticular #Torsion"
+        ]
+    },
     "balls:Baseball": {
         "NAME": "Baseball",
         "FLAVOR": "TODO",
@@ -103,14 +110,14 @@
     },
     "balls:Dodgeball": {
         "NAME": "Dodgeball",
-        "FLAVOR": "TODO",
+        "FLAVOR": "You cannot",
         "DESCRIPTIONS": [
             "Prevent the first time you would lose HP each combat. Wears off on your second turn."
         ]
     },
     "balls:DragonBall": {
         "NAME": "Dragon Ball",
-        "FLAVOR": "TODO",
+        "FLAVOR": "o7 Akira Toriyama",
         "DESCRIPTIONS": [
             "[#2aecd7]Once [#2aecd7]per [#2aecd7]act.[] Right-click to make a wish."
         ]
@@ -131,48 +138,48 @@
     },
     "balls:Eyeball": {
         "NAME": "Eyeball",
-        "FLAVOR": "TODO",
+        "FLAVOR": "Beauty is in the eye of the ball holder",
         "DESCRIPTIONS": [
             "[#2aecd7]Once [#2aecd7]per [#2aecd7]act.[] Right-click to use. Choose a card in your draw pile, that card is played twice then exhausted."
         ]
     },
     "balls:Fireball": {
         "NAME": "Fireball",
-        "FLAVOR": "TODO",
+        "FLAVOR": "Great alcohol",
         "DESCRIPTIONS": [
         ]
     },
     "balls:Football": {
         "NAME": "Football",
-        "FLAVOR": "TODO",
+        "FLAVOR": "KKona",
         "DESCRIPTIONS": [
             "Gain [E] at the start of your turn. You may only spend #b1 minute on any given turn."
         ]
     },
     "balls:FudgeBall": {
         "NAME": "Fudge Ball",
-        "FLAVOR": "TODO",
+        "FLAVOR": "it's poopoo caca do not be deceived",
         "DESCRIPTIONS": [
             "Upon pickup, regain all HP and gain #b20 max hp. Whenever you encounter another food relic, regain all your HP upon picking it up. Lee's Waffle grants #b15 max HP on pickup. Gain an extra #b1 max HP per floor. Negates the effects of Mark of the Bloom."
         ]
     },
     "balls:GolfBall": {
         "NAME": "Golf Ball",
-        "FLAVOR": "TODO",
+        "FLAVOR": "FOOOOOOOOOOOOUUUUUUUUUUUUUUUURRRRRRRRRRRRRRRR balls",
         "DESCRIPTIONS": [
             "Gain gold at the end of combat based on how quickly you finish. Par is the act number. NL Hole In One: #b25 gold. NL Eagle: #b20 gold. NL Birdie: #b15 gold. NL Par: #b10 gold. NL Bogey: #b5 gold."
         ]
     },
     "balls:Gumball": {
         "NAME": "Gumball",
-        "FLAVOR": "TODO",
+        "FLAVOR": "Your balls have some gumption to them",
         "DESCRIPTIONS": [
-            "Whenever you play an attack, gain #b1 health."
+            "For every #b3 attacks played in a turn, gain #b1 health."
         ]
     },
     "balls:Hairball": {
         "NAME": "Hairball",
-        "FLAVOR": "TODO",
+        "FLAVOR": "I have hairy balls",
         "DESCRIPTIONS": [
             "At that start of combat, there is a #b50% chance for a random enemy to become stunned. Every 3 times this happens, gain #b1 entangle.",
             "Credit to #gpgames-food for coming up with the effect for this relic."
@@ -180,41 +187,41 @@
     },
     "balls:Handball": {
         "NAME": "Handball",
-        "FLAVOR": "TODO",
+        "FLAVOR": "Handle my balls",
         "DESCRIPTIONS": [
             "Whenever you attack an enemy, deal #b2 additional damage to a random monster."
         ]
     },
     "balls:Kickball": {
         "NAME": "Kickball",
-        "FLAVOR": "TODO",
+        "FLAVOR": "Kick me in the balls",
         "DESCRIPTIONS": [
-            "Whenever an enemy attacks you for less than #b10 damage, deal #b10 damage back to them."
+            "Whenever an enemy attacks you for less than #b8 damage, deal up to #b8 damage back to them."
         ]
     },
     "balls:Marble": {
         "NAME": "Marble",
-        "FLAVOR": "TODO",
+        "FLAVOR": "Marvel at my marbles",
         "DESCRIPTIONS": [
-            "[#2aecd7]Once [#2aecd7]per [#2aecd7]combat.[] Right-click to apply #b1 vulnerable to a random enemy."
+            "[#2aecd7]Once [#2aecd7]per [#2aecd7]combat.[] Right-click to apply #b1 vulnerable to all enemies."
         ]
     },
     "balls:Meatball": {
         "NAME": "Meatball",
-        "FLAVOR": "TODO",
+        "FLAVOR": "They sure are meaty",
         "DESCRIPTIONS": [
         ]
     },
     "balls:MedicineBall": {
         "NAME": "Medicine Ball",
-        "FLAVOR": "TODO",
+        "FLAVOR": "Take two of these and call me in the morning",
         "DESCRIPTIONS": [
-            "Whenever you rest at a campfire, you may lift this relic up to #b3 times and gain strength at the start of combat. Whenever you lift with Girya, restore #b15% of your max HP."
+            "Whenever you rest at a campfire, gain #b1 #yStrength. You can do this #b3 times. Whenever you lift with Girya, restore #b15% of your max HP."
         ]
     },
     "balls:Mudball": {
         "NAME": "Mudball",
-        "FLAVOR": "TODO",
+        "FLAVOR": "it's poop, don't deny it",
         "DESCRIPTIONS": [
             "Whenever you are attacked, increase the counter by #b1. At the start of your turn, gain block equal to the counter. Whenever you attack an enemy, decrease the counter by #b1 and the enemy takes #b1 damage at the start of their next turn. Effect resets between combats.",
             "Credit to #gpgames-food for coming up with the effect for this relic."
@@ -222,21 +229,21 @@
     },
     "balls:PachinkoBall": {
         "NAME": "Pachinko Ball",
-        "FLAVOR": "TODO",
+        "FLAVOR": "LETS GO GAMBLING",
         "DESCRIPTIONS": [
-            "For your first #b5 turns, if you finish your turn in #b15 seconds, gain #b5 gold."
+            "Right-click for a #b50% chance to double the gold at a card reward, or the gold disappears."
         ]
     },
     "balls:PaddleBall": {
         "NAME": "Paddle Ball",
-        "FLAVOR": "TODO",
+        "FLAVOR": "Kinky",
         "DESCRIPTIONS": [
-            "The first attack you receive each combat is reflected back onto the attacking enemy."
+            "You take 0 damage from the firstj attack that hits you each combat and it reflects back onto the attacking enemy."
         ]
     },
     "balls:Pinball": {
         "NAME": "Pinball",
-        "FLAVOR": "TODO",
+        "FLAVOR": "I want you to pin me, Flirt",
         "DESCRIPTIONS": [
             "Every time you alternate attacks between different enemies, increase the damage dealt by #b2."
         ]
@@ -252,7 +259,7 @@
         "NAME": "Pokeball",
         "FLAVOR": "TODO",
         "DESCRIPTIONS": [
-            "At the end of every other combat, add #b25 gold, a potion, or a card reward to the rewards."
+            "At the end of every combat, add #b30 gold, a potion, or a card reward to the rewards."
         ]
     },
     "balls:RiceBall": {
@@ -293,7 +300,7 @@
         "NAME": "Snowball",
         "FLAVOR": "TODO",
         "DESCRIPTIONS": [
-            "For every #b3 attacks played, channel #1 frost orb."
+            "For every #b3 attacks played, channel #b1 frost orb."
         ]
     },
     "balls:StressBall": {
@@ -306,7 +313,7 @@
         "NAME": "Tennis Ball",
         "FLAVOR": "TODO",
         "DESCRIPTIONS": [
-            "[#2aecd7]Usable [#2aecd7]only [#2aecd7]once.[] At the start of combat, increase the counter by #b1. Right-click to gain block equal to the counter."
+            "[#2aecd7]Usable [#2aecd7]only [#2aecd7]once.[] At the start of your turn, increase the counter by #b1. Right-click to gain block equal to the counter."
         ]
     },
     "balls:Tetherball": {

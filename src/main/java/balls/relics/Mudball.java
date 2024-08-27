@@ -2,12 +2,12 @@ package balls.relics;
 
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
 import com.megacrit.cardcrawl.actions.common.GainBlockAction;
+import com.megacrit.cardcrawl.actions.utility.UseCardAction;
+import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.cards.DamageInfo;
-import com.megacrit.cardcrawl.core.AbstractCreature;
-// import com.megacrit.cardcrawl.core.CardCrawlGame;
+import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.helpers.PowerTip;
-// import com.megacrit.cardcrawl.localization.PowerStrings;
 
 import balls.powers.TakeDamageNextTurnPower;
 
@@ -50,13 +50,16 @@ public class Mudball extends AbstractBallRelic {
     }
 
     @Override
-    public void onAttack(DamageInfo info, int damageAmount, AbstractCreature target) {
+    public void onUseCard(AbstractCard card, UseCardAction useCardAction) {
+        if (card.type != AbstractCard.CardType.ATTACK || useCardAction.target instanceof AbstractPlayer)
+            return;
+
         if (this.counter > 0) {
             this.counter--;
             if (this.counter < 0) {
                 this.counter = 0;
             }
-            addToBot(new ApplyPowerAction(target, AbstractDungeon.player, new TakeDamageNextTurnPower(target, 1), 1));
+            addToBot(new ApplyPowerAction(useCardAction.target, AbstractDungeon.player, new TakeDamageNextTurnPower(useCardAction.target, 1), 1));
         }
     }
 }

@@ -3,10 +3,8 @@ package balls.relics;
 import com.evacipated.cardcrawl.mod.stslib.powers.StunMonsterPower;
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
 import com.megacrit.cardcrawl.actions.unique.LoseEnergyAction;
-// import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.helpers.PowerTip;
-// import com.megacrit.cardcrawl.localization.PowerStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.powers.EntanglePower;
 
@@ -18,7 +16,7 @@ public class Hairball extends AbstractBallRelic {
     // private static final PowerStrings POWER_STRINGS = CardCrawlGame.languagePack.getPowerStrings(RELIC_ID);
 
     public Hairball() {
-        super(RELIC_ID, NAME, RelicTier.BOSS, LandingSound.FLAT);
+        super(RELIC_ID, NAME, RelicTier.UNCOMMON, LandingSound.FLAT);
         this.counter = 0;
 
         // this.tips.add(new PowerTip("Creator", POWER_STRINGS.DESCRIPTIONS[1]));
