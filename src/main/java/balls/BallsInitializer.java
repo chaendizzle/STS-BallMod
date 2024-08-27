@@ -35,13 +35,13 @@ import com.megacrit.cardcrawl.rooms.AbstractRoom;
 import balls.helpers.ComplimentHelper;
 import balls.relics.*;
 import balls.ui.informationpanel.CombatInformationPanel;
-// import balls.ui.informationpanel.EventInformationPanel;
 import balls.util.IDCheckDontTouchPls;
 import balls.util.TextureLoader;
 
 import java.io.InputStream;
 import java.io.InputStreamReader;
 import java.nio.charset.StandardCharsets;
+import java.util.ArrayList;
 import java.util.Properties;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
@@ -57,6 +57,8 @@ public class BallsInitializer implements
 
     public static final Logger logger = LogManager.getLogger(BallsInitializer.class.getName());
     private static String modID;
+
+    public static ArrayList<AbstractBallRelic> balls = new ArrayList<AbstractBallRelic>();
 
     // Mod-settings settings. This is if you want an on/off savable button
     public static Properties ballsProperties = new Properties();
@@ -353,66 +355,83 @@ public class BallsInitializer implements
         //         logger.info(relic.relicId);
         //         if (relic instanceof AbstractBallRelic) {
         //             if (((AbstractBallRelic)relic).cardColor == null) {
-        //                 BaseMod.addRelic((AbstractRelic)relic, RelicType.SHARED);
+        //                 balls.add((AbstractRelic)relic);
         //             } else {
-        //                 BaseMod.addRelicToCustomPool((AbstractRelic)relic, ((AbstractBallRelic)relic).cardColor);
+        //                 balls.addToCustomPool((AbstractRelic)relic, ((AbstractBallRelic)relic).cardColor);
         //             }
         //         }
         //         if (info.seen)
         //             UnlockTracker.markRelicAsSeen(relic.relicId);
         //     });
 
-        BaseMod.addRelic(new Baal(), RelicType.SHARED);
-        BaseMod.addRelic(new BallOfYarn(), RelicType.SHARED);
-        BaseMod.addRelic(new Baseball(), RelicType.SHARED);
-        BaseMod.addRelic(new Basketball(), RelicType.SHARED);
-        BaseMod.addRelic(new BeachBall(), RelicType.SHARED);
-        // BaseMod.addRelic(new BingoBall(), RelicType.SHARED);
-        BaseMod.addRelic(new BowlingBall(), RelicType.SHARED);
-        BaseMod.addRelic(new BruceAvocadoLittleLeviathanSouleater(), RelicType.SHARED);
-        // BaseMod.addRelic(new Butterball(), RelicType.SHARED);
-        // BaseMod.addRelic(new Cannonball(), RelicType.SHARED);
-        BaseMod.addRelic(new CheeseBall(), RelicType.SHARED);
-        // BaseMod.addRelic(new CottonBall(), RelicType.SHARED);
-        BaseMod.addRelic(new CricketBall(), RelicType.SHARED);
-        BaseMod.addRelic(new CrystalBall(), RelicType.SHARED);
-        // BaseMod.addRelic(new DiscoBall(), RelicType.SHARED); // TODO: BROKEN
-        BaseMod.addRelic(new Dodgeball(), RelicType.SHARED);
-        BaseMod.addRelic(new DragonBall(), RelicType.SHARED);
-        // BaseMod.addRelic(new EightBall(), RelicType.SHARED); // TODO: BROKEN
-        BaseMod.addRelic(new EnergyBall(), RelicType.SHARED);
-        BaseMod.addRelic(new Eyeball(), RelicType.SHARED);
-        // BaseMod.addRelic(new Fireball(), RelicType.SHARED);
-        BaseMod.addRelic(new Football(), RelicType.SHARED);
-        BaseMod.addRelic(new FudgeBall(), RelicType.SHARED);
-        BaseMod.addRelic(new GolfBall(), RelicType.SHARED);
-        BaseMod.addRelic(new Gumball(), RelicType.SHARED);
-        BaseMod.addRelic(new Handball(), RelicType.SHARED);
-        BaseMod.addRelic(new Hairball(), RelicType.SHARED);
-        BaseMod.addRelic(new Kickball(), RelicType.SHARED);
-        BaseMod.addRelic(new Marble(), RelicType.RED);
-        // BaseMod.addRelic(new Meatball(), RelicType.SHARED);
-        BaseMod.addRelic(new MedicineBall(), RelicType.SHARED);
-        BaseMod.addRelic(new Mudball(), RelicType.SHARED);
-        BaseMod.addRelic(new PachinkoBall(), RelicType.SHARED);
-        BaseMod.addRelic(new PaddleBall(), RelicType.SHARED);
-        BaseMod.addRelic(new Pinball(), RelicType.SHARED);
-        BaseMod.addRelic(new PingPongBall(), RelicType.SHARED);
-        BaseMod.addRelic(new Pokeball(), RelicType.SHARED);
-        BaseMod.addRelic(new RiceBall(), RelicType.SHARED);
-        BaseMod.addRelic(new RubberBandBall(), RelicType.SHARED);
-        BaseMod.addRelic(new RubberBouncyBall(), RelicType.SHARED);
-        // BaseMod.addRelic(new RugbyBall(), RelicType.SHARED);
-        BaseMod.addRelic(new Snowball(), RelicType.BLUE);
-        // BaseMod.addRelic(new SoccerBall(), RelicType.SHARED); // TODO: effect broken
-        // BaseMod.addRelic(new StressBall(), RelicType.SHARED);
-        BaseMod.addRelic(new TennisBall(), RelicType.SHARED);
-        // BaseMod.addRelic(new Tetherball(), RelicType.SHARED);
-        BaseMod.addRelic(new Volleyball(), RelicType.SHARED);
-        BaseMod.addRelic(new WaterPoloBall(), RelicType.PURPLE);
-        BaseMod.addRelic(new WhiffleBall(), RelicType.GREEN);
-        BaseMod.addRelic(new WreckingBall(), RelicType.SHARED);
-        // BaseMod.addRelic(new YogaBall(), RelicType.SHARED);
+        balls.add(new Baal());
+        balls.add(new BallOfYarn());
+        balls.add(new BallSack());
+        balls.add(new Baseball());
+        balls.add(new Basketball());
+        balls.add(new BeachBall());
+        // balls.add(new BingoBall());
+        balls.add(new BowlingBall());
+        balls.add(new BruceAvocadoLittleLeviathanSouleater());
+        // balls.add(new Butterball());
+        // balls.add(new Cannonball());
+        balls.add(new CheeseBall());
+        // balls.add(new CottonBall());
+        balls.add(new CricketBall());
+        balls.add(new CrystalBall());
+        // balls.add(new DiscoBall()); // TODO: BROKEN
+        balls.add(new Dodgeball());
+        balls.add(new DragonBall());
+        // balls.add(new EightBall()); // TODO: BROKEN
+        balls.add(new EnergyBall());
+        balls.add(new Eyeball());
+        // balls.add(new Fireball());
+        balls.add(new Football());
+        balls.add(new FudgeBall());
+        balls.add(new GolfBall());
+        balls.add(new Gumball());
+        balls.add(new Handball());
+        balls.add(new Hairball());
+        balls.add(new Kickball());
+        // balls.add(new Meatball());
+        balls.add(new MedicineBall());
+        balls.add(new Mudball());
+        balls.add(new PachinkoBall());
+        balls.add(new PaddleBall());
+        balls.add(new Pinball());
+        balls.add(new PingPongBall());
+        balls.add(new Pokeball());
+        balls.add(new RiceBall());
+        balls.add(new RubberBandBall());
+        balls.add(new RubberBouncyBall());
+        // balls.add(new RugbyBall());
+        // balls.add(new SoccerBall()); // TODO: effect broken
+        // balls.add(new StressBall());
+        balls.add(new TennisBall());
+        // balls.add(new Tetherball());
+        balls.add(new Volleyball());
+        balls.add(new WreckingBall());
+        // balls.add(new YogaBall());
+
+        for (AbstractBallRelic ball : balls) {
+            BaseMod.addRelic(ball, RelicType.SHARED);
+        }
+
+        Marble marble = new Marble();
+        BaseMod.addRelic(marble, RelicType.RED);
+        balls.add(marble);
+
+        Snowball snowball = new Snowball();
+        BaseMod.addRelic(snowball, RelicType.BLUE);
+        balls.add(snowball);
+
+        WaterPoloBall wpb = new WaterPoloBall();
+        BaseMod.addRelic(wpb, RelicType.PURPLE);
+        balls.add(wpb);
+
+        WhiffleBall wf = new WhiffleBall();;
+        BaseMod.addRelic(wf, RelicType.GREEN);
+        balls.add(wf);
 
         logger.info ("Done adding relics");
     }
