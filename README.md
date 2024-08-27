@@ -1,5 +1,5 @@
-# BlankMod
-Blank mod for STS modding projects. Should work right out of the gate, run:
+# BALLS
+BALLS. Should work right out of the gate, run:
 
 `mvn package`
 

@@ -17,7 +17,7 @@
         "NAME": "Ball Sack",
         "FLAVOR": "Mods, twist his ball sack",
         "DESCRIPTIONS": [
-            "On pickup, add 1 common, 1 uncommon, and 1 rare #pBalls relic. Obtain #rTesticular #Torsion"
+            "On pickup, add 1 common, 1 uncommon, and 1 rare #pBalls relic. Obtain #rTesticular #rTorsion"
         ]
     },
     "balls:Baseball": {
@@ -98,7 +98,7 @@
         "NAME": "Crystal Ball",
         "FLAVOR": "TODO",
         "DESCRIPTIONS": [
-            "See a preview of the next combat when hovering over the nodes on the map."
+            "[#2aecd7]Once [#2aecd7]per [#2aecd7]act.[] Right-click to #yscry the rest of your draw pile."
         ]
     },
     "balls:DiscoBall": {
@@ -126,7 +126,7 @@
         "NAME": "Eight Ball",
         "FLAVOR": "TODO",
         "DESCRIPTIONS": [
-            "See a preview of the next event when hovering over the nodes on the map."
+            "At the start of every turn, put a random card from your discard pile into your hand."
         ]
     },
     "balls:EnergyBall": {

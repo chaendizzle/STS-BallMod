@@ -1,5 +1,9 @@
 package balls.relics;
 
+import com.megacrit.cardcrawl.actions.utility.DiscardToHandAction;
+import com.megacrit.cardcrawl.cards.CardGroup;
+import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
+
 import balls.BallsInitializer;
 
 public class EightBall extends AbstractBallRelic {
@@ -12,7 +16,11 @@ public class EightBall extends AbstractBallRelic {
     }
 
     @Override
-    public boolean canSpawn() {
-        return !BallsInitializer.disablePreviewRelics;
+    public void atTurnStartPostDraw() {
+        CardGroup discarded = AbstractDungeon.player.discardPile;
+        if (discarded.size() > 0) {
+            this.flash();
+            addToBot(new DiscardToHandAction(discarded.getRandomCard(true)));
+        }
     }
 }

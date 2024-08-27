@@ -5,6 +5,7 @@ import basemod.ModLabeledToggleButton;
 import basemod.ModPanel;
 import basemod.abstracts.CustomSavableRaw;
 import basemod.helpers.RelicType;
+import basemod.interfaces.EditCardsSubscriber;
 import basemod.interfaces.EditRelicsSubscriber;
 import basemod.interfaces.EditStringsSubscriber;
 import basemod.interfaces.OnStartBattleSubscriber;
@@ -20,11 +21,13 @@ import com.evacipated.cardcrawl.modthespire.lib.SpireConfig;
 import com.evacipated.cardcrawl.modthespire.lib.SpireInitializer;
 import com.google.gson.Gson;
 import com.google.gson.JsonElement;
+import com.google.gson.JsonObject;
 import com.google.gson.JsonParser;
 import com.megacrit.cardcrawl.actions.animations.TalkAction;
 import com.megacrit.cardcrawl.core.Settings;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.helpers.FontHelper;
+import com.megacrit.cardcrawl.localization.CardStrings;
 import com.megacrit.cardcrawl.localization.PowerStrings;
 import com.megacrit.cardcrawl.localization.RelicStrings;
 import com.megacrit.cardcrawl.localization.UIStrings;
@@ -32,9 +35,10 @@ import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.monsters.city.SphericGuardian;
 import com.megacrit.cardcrawl.relics.AbstractRelic;
 import com.megacrit.cardcrawl.rooms.AbstractRoom;
+
+import balls.cards.TesticularTorsion;
 import balls.helpers.ComplimentHelper;
 import balls.relics.*;
-import balls.ui.informationpanel.CombatInformationPanel;
 import balls.util.IDCheckDontTouchPls;
 import balls.util.TextureLoader;
 
@@ -48,6 +52,7 @@ import org.apache.logging.log4j.Logger;
 
 @SpireInitializer
 public class BallsInitializer implements
+    EditCardsSubscriber,
     EditRelicsSubscriber,
     EditStringsSubscriber,
     OnStartBattleSubscriber,
@@ -65,7 +70,6 @@ public class BallsInitializer implements
     public static final String DISABLE_BALL_COMPLIMENTS = "disableBallCompliments";
     public static final String DISABLE_PREVIEW_RELICS = "disablePreviewRelics";
     public static boolean disableBallCompliments = false;
-    public static boolean disablePreviewRelics = false;
 
     //This is for the in-game mod settings panel.
     private static final String MODNAME = "Balls";
@@ -103,7 +107,6 @@ public class BallsInitializer implements
             SpireConfig config = new SpireConfig("balls", "ballsConfig", ballsProperties);
             config.load();
             disableBallCompliments = config.getBool(DISABLE_BALL_COMPLIMENTS);
-            disablePreviewRelics = config.getBool(DISABLE_PREVIEW_RELICS);
         } catch (Exception e) {
             e.printStackTrace();
         }
@@ -194,26 +197,7 @@ public class BallsInitializer implements
             }
         });
 
-        // TODO: Commenting out because neither relic is functional at the moment
-        // ModLabeledToggleButton disablePreviewRelicsButton = new ModLabeledToggleButton("Disable Eight Ball & Crystal Ball",
-        //         350.0f, 650.0f, Settings.CREAM_COLOR, FontHelper.charDescFont,
-        //         disablePreviewRelics,
-        //         settingsPanel,
-        //         (label) -> {},
-        //         (button) -> {
-
-        //     disablePreviewRelics = button.enabled;
-        //     try {
-        //         SpireConfig config = new SpireConfig("balls", "ballsConfig", ballsProperties);
-        //         config.setBool(DISABLE_PREVIEW_RELICS, disablePreviewRelics);
-        //         config.save();
-        //     } catch (Exception e) {
-        //         e.printStackTrace();
-        //     }
-        // });
-
         settingsPanel.addUIElement(disableBallComplimentsButton);
-        // settingsPanel.addUIElement(disablePreviewRelicsButton);
 
         BaseMod.registerModBadge(badgeTexture, MODNAME, AUTHOR, DESCRIPTION, settingsPanel);
 
@@ -226,33 +210,39 @@ public class BallsInitializer implements
             public void onLoadRaw(JsonElement json) {
                 if (AbstractDungeon.player != null) {
                     if (json != null) {
-                        if (AbstractDungeon.player.hasRelic(BowlingBall.RELIC_ID)) {
-                            JsonElement bowlingBallActive = json.getAsJsonObject().get("bowlingBallActive");
+                        JsonObject object = json.getAsJsonObject();
+                        if (AbstractDungeon.player.hasRelic(BowlingBall.RELIC_ID) && object.has("bowlingBallActive")) {
+                            JsonElement bowlingBallActive = object.get("bowlingBallActive");
                             BowlingBall bowlingBall = ((BowlingBall)AbstractDungeon.player.getRelic(BowlingBall.RELIC_ID));
                             bowlingBall.doubleDamage = bowlingBallActive.getAsBoolean();
                         }
-                        if (AbstractDungeon.player.hasRelic(DragonBall.RELIC_ID)) {
-                            JsonElement dragonBallUsed = json.getAsJsonObject().get("dragonBallUsed");
+                        if (AbstractDungeon.player.hasRelic(CrystalBall.RELIC_ID) && object.has("crystalBallUsed")) {
+                            JsonElement crystalBallUsed = object.get("crystalBallUsed");
+                            CrystalBall crystalBall = ((CrystalBall)AbstractDungeon.player.getRelic(CrystalBall.RELIC_ID));
+                            crystalBall.grayscale = crystalBallUsed.getAsBoolean();
+                        }
+                        if (AbstractDungeon.player.hasRelic(DragonBall.RELIC_ID) && object.has("dargonBallUsed")) {
+                            JsonElement dragonBallUsed = object.get("dragonBallUsed");
                             DragonBall dragonBall = ((DragonBall)AbstractDungeon.player.getRelic(DragonBall.RELIC_ID));
                             dragonBall.grayscale = dragonBallUsed.getAsBoolean();
                         }
-                        if (AbstractDungeon.player.hasRelic(EnergyBall.RELIC_ID)) {
-                            JsonElement energyBallUsed = json.getAsJsonObject().get("energyBallUsed");
+                        if (AbstractDungeon.player.hasRelic(EnergyBall.RELIC_ID) && object.has("energyBallUsed")) {
+                            JsonElement energyBallUsed = object.get("energyBallUsed");
                             EnergyBall energyBall = ((EnergyBall)AbstractDungeon.player.getRelic(EnergyBall.RELIC_ID));
                             energyBall.grayscale = energyBallUsed.getAsBoolean();
                         }
-                        if (AbstractDungeon.player.hasRelic(Eyeball.RELIC_ID)) {
-                            JsonElement eyeballUsed = json.getAsJsonObject().get("eyeballUsed");
+                        if (AbstractDungeon.player.hasRelic(Eyeball.RELIC_ID) && object.has("eyeballUsed")) {
+                            JsonElement eyeballUsed = object.get("eyeballUsed");
                             Eyeball eyeball = ((Eyeball)AbstractDungeon.player.getRelic(Eyeball.RELIC_ID));
                             eyeball.grayscale = eyeballUsed.getAsBoolean();
                         }
-                        if (AbstractDungeon.player.hasRelic(RubberBandBall.RELIC_ID)) {
-                            JsonElement rubberBandBallUsed = json.getAsJsonObject().get("rubberBandBallUsed");
+                        if (AbstractDungeon.player.hasRelic(RubberBandBall.RELIC_ID) && object.has("rubberBandBallUsed")) {
+                            JsonElement rubberBandBallUsed = object.get("rubberBandBallUsed");
                             RubberBandBall rubberBandBall = ((RubberBandBall)AbstractDungeon.player.getRelic(RubberBandBall.RELIC_ID));
                             rubberBandBall.grayscale = rubberBandBallUsed.getAsBoolean();
                         }
-                        if (AbstractDungeon.player.hasRelic(TennisBall.RELIC_ID)) {
-                            JsonElement tennisBallUsed = json.getAsJsonObject().get("tennisBallUsed");
+                        if (AbstractDungeon.player.hasRelic(TennisBall.RELIC_ID) && object.has("tennisBallUsed")) {
+                            JsonElement tennisBallUsed = object.get("tennisBallUsed");
                             TennisBall tennisBall = ((TennisBall)AbstractDungeon.player.getRelic(TennisBall.RELIC_ID));
                             tennisBall.grayscale = tennisBallUsed.getAsBoolean();
                         }
@@ -264,6 +254,7 @@ public class BallsInitializer implements
             public JsonElement onSaveRaw() {
                 JsonParser parser = new JsonParser();
                 boolean bowlingBallActive = false;
+                boolean crystalBallUsed = false;
                 boolean dragonBallUsed = false;
                 boolean energyBallUsed = false;
                 boolean eyeballUsed = false;
@@ -274,26 +265,31 @@ public class BallsInitializer implements
                     if (AbstractDungeon.player.hasRelic(BowlingBall.RELIC_ID)) {
                         bowlingBallActive = ((BowlingBall)AbstractDungeon.player.getRelic(BowlingBall.RELIC_ID)).doubleDamage;
                     }
+                    if (AbstractDungeon.player.hasRelic(CrystalBall.RELIC_ID)) {
+                        crystalBallUsed = AbstractDungeon.player.getRelic(CrystalBall.RELIC_ID).grayscale;
+                    }
                     if (AbstractDungeon.player.hasRelic(DragonBall.RELIC_ID)) {
-                        dragonBallUsed = ((DragonBall)AbstractDungeon.player.getRelic(DragonBall.RELIC_ID)).grayscale;
+                        dragonBallUsed = AbstractDungeon.player.getRelic(DragonBall.RELIC_ID).grayscale;
                     }
                     if (AbstractDungeon.player.hasRelic(EnergyBall.RELIC_ID)) {
-                        energyBallUsed = ((EnergyBall)AbstractDungeon.player.getRelic(EnergyBall.RELIC_ID)).grayscale;
+                        energyBallUsed = AbstractDungeon.player.getRelic(EnergyBall.RELIC_ID).grayscale;
                     }
                     if (AbstractDungeon.player.hasRelic(Eyeball.RELIC_ID)) {
-                        eyeballUsed = ((Eyeball)AbstractDungeon.player.getRelic(Eyeball.RELIC_ID)).grayscale;
+                        eyeballUsed = AbstractDungeon.player.getRelic(Eyeball.RELIC_ID).grayscale;
                     }
                     if (AbstractDungeon.player.hasRelic(RubberBandBall.RELIC_ID)) {
-                        rubberBandBallUsed = ((RubberBandBall)AbstractDungeon.player.getRelic(RubberBandBall.RELIC_ID)).grayscale;
+                        rubberBandBallUsed = AbstractDungeon.player.getRelic(RubberBandBall.RELIC_ID).grayscale;
                     }
                     if (AbstractDungeon.player.hasRelic(TennisBall.RELIC_ID)) {
-                        tennisBallUsed = ((TennisBall)AbstractDungeon.player.getRelic(TennisBall.RELIC_ID)).grayscale;
+                        tennisBallUsed = AbstractDungeon.player.getRelic(TennisBall.RELIC_ID).grayscale;
                     }
                 }
 
                 return parser.parse(
                     "{\"bowlingBallActive\":\""
                     + bowlingBallActive
+                    + "\",\"crystalBallUsed\":\""
+                    + crystalBallUsed
                     + "\",\"dragonBallUsed\":\""
                     + dragonBallUsed
                     + "\",\"energyBallUsed\":\""
@@ -323,6 +319,10 @@ public class BallsInitializer implements
 
         pathCheck();
 
+        // CardStrings
+        BaseMod.loadCustomStringsFile(CardStrings.class,
+            getModID() + "Resources/localization/eng/Balls-Card-Strings.json");
+
         // PowerStrings
         BaseMod.loadCustomStringsFile(PowerStrings.class,
             getModID() + "Resources/localization/eng/Balls-Power-Strings.json");
@@ -342,6 +342,15 @@ public class BallsInitializer implements
 
 
     // ================ ADD RELICS ===================
+
+    @Override
+    public void receiveEditCards() {
+        logger.info("Adding cards");
+
+        BaseMod.addCard(new TesticularTorsion());
+
+        logger.info("Done adding cards");
+    }
 
     @Override
     public void receiveEditRelics() {
@@ -382,7 +391,7 @@ public class BallsInitializer implements
         // balls.add(new DiscoBall()); // TODO: BROKEN
         balls.add(new Dodgeball());
         balls.add(new DragonBall());
-        // balls.add(new EightBall()); // TODO: BROKEN
+        balls.add(new EightBall());
         balls.add(new EnergyBall());
         balls.add(new Eyeball());
         // balls.add(new Fireball());
@@ -405,7 +414,7 @@ public class BallsInitializer implements
         balls.add(new RubberBandBall());
         balls.add(new RubberBouncyBall());
         // balls.add(new RugbyBall());
-        // balls.add(new SoccerBall()); // TODO: effect broken
+        balls.add(new SoccerBall());
         // balls.add(new StressBall());
         balls.add(new TennisBall());
         // balls.add(new Tetherball());
@@ -479,18 +488,18 @@ public class BallsInitializer implements
 
     @Override
     public void receivePostUpdate() {
-        if (!disablePreviewRelics) {
-            // EventInformationPanel.panel().update();
-            CombatInformationPanel.panel().update();
-        }
+        // if (!disablePreviewRelics) {
+        //     EventInformationPanel.panel().update();
+        //     CombatInformationPanel.panel().update();
+        // }
     }
 
     @Override
     public void receivePostRender(SpriteBatch sb) {
-        if (!disablePreviewRelics) {
-            // EventInformationPanel.panel().render(sb);
-            CombatInformationPanel.panel().render(sb);
-        }
+        // if (!disablePreviewRelics) {
+        //     EventInformationPanel.panel().render(sb);
+        //     CombatInformationPanel.panel().render(sb);
+        // }
     }
 
     // ================ /UPDATE & RENDER/ ===================
