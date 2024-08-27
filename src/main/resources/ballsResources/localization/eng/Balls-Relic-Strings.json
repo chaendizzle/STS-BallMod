@@ -238,7 +238,7 @@
         "NAME": "Paddle Ball",
         "FLAVOR": "Kinky",
         "DESCRIPTIONS": [
-            "You take 0 damage from the firstj attack that hits you each combat and it reflects back onto the attacking enemy."
+            "You take 0 damage from the first attack that hits you each combat and it reflects back onto the attacking enemy."
         ]
     },
     "balls:Pinball": {

@@ -80,6 +80,7 @@ public class BallSack extends AbstractBallRelic implements OnRemoveCardFromMaste
             AbstractDungeon.gridSelectScreen.openConfirmationGrid(group, "Cured at a cost...");
         }
     }
+
     @Override
     public void onRemoveCardFromMasterDeck(AbstractCard card) {
         if (card.cardID.equals(TesticularTorsion.CARD_ID)) {

@@ -13,7 +13,7 @@
     },
     "balls:PaddleBall": {
         "NAME": "Paddle Ball",
-        "DESCRIPTIONS": ["You take 0 damage from the first attack that hits you each combat and it reflects back onto the attacking enemy."]
+        "DESCRIPTIONS": ["You take #b0 damage from the first attack that hits you each combat and it reflects back onto the attacking enemy."]
     },
     "balls:TakeDamageNextTurn": {
         "NAME": "Take Damage Next Turn",
