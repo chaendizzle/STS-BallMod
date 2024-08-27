@@ -1,87 +1,62 @@
 package balls.relics;
 
-import com.megacrit.cardcrawl.actions.GameActionManager;
+import java.util.ArrayList;
+
+import com.evacipated.cardcrawl.mod.stslib.relics.ClickableRelic;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.relics.AbstractRelic;
+import com.megacrit.cardcrawl.rewards.RewardItem;
+import com.megacrit.cardcrawl.rewards.RewardItem.RewardType;
+import com.megacrit.cardcrawl.rooms.AbstractRoom;
 
 import balls.BallsInitializer;
 
-public class PachinkoBall extends AbstractBallRelic {
+public class PachinkoBall extends AbstractBallRelic implements ClickableRelic {
 
     private static final String NAME = PachinkoBall.class.getSimpleName();
     public static final String RELIC_ID = BallsInitializer.makeID(NAME);
-    private static final AbstractRelic.RelicTier RELIC_TIER = AbstractRelic.RelicTier.SHOP;
+    private static final AbstractRelic.RelicTier RELIC_TIER = AbstractRelic.RelicTier.UNCOMMON;
     private static final AbstractRelic.LandingSound SFX = AbstractRelic.LandingSound.CLINK;
-
-    private Thread countdown;
-
-    private static int COUNTER_MAX = 15;
-    private static int GOLD_GAIN = 5;
 
     public PachinkoBall() {
         super(RELIC_ID, NAME, RELIC_TIER, SFX);
     }
 
     @Override
-    public void atTurnStartPostDraw() {
-        // start a thread that will remove 1 from the counter every second
-        this.counter = COUNTER_MAX;
-        int currentTurn = GameActionManager.turn;
-        if (currentTurn < 6) { // for first 5 turns only
-            this.grayscale = false;
-            if (countdown != null && !countdown.isInterrupted())
-                countdown.interrupt();
-            countdown = new Thread(() -> {
-                try {
-                    do {
-                        Thread.sleep(1000);
-                        if ((!AbstractDungeon.isScreenUp ||
-                                (AbstractDungeon.isScreenUp &&
-                                    AbstractDungeon.screen !=
-                                        AbstractDungeon.CurrentScreen.SETTINGS)
-                            && currentTurn == GameActionManager.turn)) {
-                            this.counter--;
-                            if (this.counter <= 0) {
-                                this.grayscale = true;
-                                this.counter = -1;
-                                break;
-                            }
-                        }
-                    } while (currentTurn == GameActionManager.turn);
-                } catch (InterruptedException e) {
-                    // do nothing, we don't want to disturb the gamer
-                }
-            });
-            countdown.start();
-        }
-    }
-
-    private void checkCounter() {
-        if (this.counter > 0) {
-            this.flash();
-            AbstractDungeon.player.gainGold(GOLD_GAIN);
-        }
-        if (GameActionManager.turn >= 5) {
-            this.grayscale = true;
-        }
-    }
-
-    @Override
-    public void onPlayerEndTurn() {
-        if (countdown != null) {
-            countdown.interrupt();
-            checkCounter();
-        }
-        this.counter = COUNTER_MAX;
+    public void onEnterRoom(AbstractRoom room) {
+        this.stopPulse();
+        this.grayscale = false;
     }
 
     @Override
     public void onVictory() {
-        if (countdown != null) {
-            countdown.interrupt();
-            checkCounter();
+        this.beginLongPulse();
+    }
+
+    @Override
+    public void onRightClick() {
+        if (grayscale)
+            return;
+
+        if (AbstractDungeon.getCurrRoom().isBattleOver) {
+            this.flash();
+            ArrayList<RewardItem> rewards = new ArrayList<RewardItem>(AbstractDungeon.getCurrRoom().rewards);
+            if (rewards.size() > 0 && AbstractDungeon.miscRng.randomBoolean()) {
+                for (RewardItem item : rewards) {
+                    if (item.type == RewardType.GOLD || item.type == RewardType.STOLEN_GOLD) {
+                        item.incrementGold(item.goldAmt + item.bonusGold);
+                    }
+                }
+            } else {
+                for (RewardItem item : rewards) {
+                    if (item.type == RewardType.GOLD || item.type == RewardType.STOLEN_GOLD) {
+                        item.incrementGold((item.goldAmt + item.bonusGold) * -1); // doing something wacky because it won't change gold value unless through the API
+                    }
+                }
+                this.grayscale = true;
+                this.usedUp = true;
+                this.stopPulse();
+            }
         }
-        this.counter = -1;
-        this.grayscale = false;
     }
 }

@@ -24,7 +24,7 @@
         "NAME": "Baseball",
         "FLAVOR": "TODO",
         "DESCRIPTIONS": [
-            "Gain #b", " strength at the start of combat. Whenever you deal the exact amount of damage required to kill an enemy, permanently increase this value by #b1."
+            "Gain strength at the start of combat. Whenever you deal the exact amount of damage required to kill an enemy, permanently increase this value by #b1."
         ]
     },
     "balls:Basketball": {
