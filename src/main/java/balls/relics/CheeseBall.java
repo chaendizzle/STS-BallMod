@@ -1,6 +1,5 @@
 package balls.relics;
 
-import com.megacrit.cardcrawl.actions.common.HealAction;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import balls.BallsInitializer;
 
@@ -15,7 +14,7 @@ public class CheeseBall extends AbstractBallRelic {
 
     @Override
     public void onEquip() {
-        addToBot(new HealAction(AbstractDungeon.player, AbstractDungeon.player, AbstractDungeon.player.maxHealth / 2));
+        AbstractDungeon.player.heal(AbstractDungeon.player.maxHealth / 2);
     }
 
     @Override
