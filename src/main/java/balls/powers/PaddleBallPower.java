@@ -44,11 +44,12 @@ public class PaddleBallPower extends AbstractPower {
     }
 
     @Override
-    public int onAttackedToChangeDamage(DamageInfo info, int damageAmount) {
-        if (damageAmount > 0) {
+    public int onAttacked(DamageInfo info, int damageAmount) {
+        if (info.type == DamageInfo.DamageType.NORMAL && info.owner != this.owner && damageAmount > 0) {
             addToTop(new DamageAction(info.owner, info));
             addToTop(new RemoveSpecificPowerAction(owner, owner, POWER_ID));
+            return 0;
         }
-        return 0;
+        return damageAmount;
     }
 }

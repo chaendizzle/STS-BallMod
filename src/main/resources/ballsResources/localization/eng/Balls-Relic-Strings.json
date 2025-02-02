@@ -196,7 +196,7 @@
         "NAME": "Kickball",
         "FLAVOR": "Kick me in the balls",
         "DESCRIPTIONS": [
-            "Whenever an enemy attacks you, deal up to #b8 damage back to them."
+            "Whenever an enemy attacks you, deal up to #b6 damage back to them."
         ]
     },
     "balls:Marble": {
