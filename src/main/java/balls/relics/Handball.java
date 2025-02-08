@@ -20,6 +20,6 @@ public class Handball extends AbstractBallRelic {
     public void onAttack(DamageInfo info, int damageAmount, AbstractCreature target) {
         AbstractMonster randomMonster = AbstractDungeon.getMonsters().getRandomMonster();
         if (randomMonster != null && info.type == DamageType.NORMAL)
-            randomMonster.damage(new DamageInfo(null, 2, DamageType.NORMAL));
+            randomMonster.damage(new DamageInfo(AbstractDungeon.player, 2, DamageType.NORMAL));
     }
 }
