@@ -261,7 +261,7 @@ public class BallsInitializer implements
                 boolean rubberBandBallUsed = false;
                 boolean tennisBallUsed = false;
 
-                if(AbstractDungeon.player != null) {
+                if(AbstractDungeon.player != null && AbstractDungeon.player.relics != null) {
                     if (AbstractDungeon.player.hasRelic(BowlingBall.RELIC_ID)) {
                         bowlingBallActive = ((BowlingBall)AbstractDungeon.player.getRelic(BowlingBall.RELIC_ID)).doubleDamage;
                     }
